@@ -10,6 +10,7 @@ url = "https://raw.githubusercontent.com/michalskop/tipsport.cz/main/2022/daily/
 
 assets_path = "frontend/assets/"
 public_path = "frontend/public/shares/"
+flourish_path = "backend/data/"
 
 election_date = '2023-01-01'
 
@@ -43,10 +44,16 @@ last_date = pd.DataFrame([{'date': df.iloc[-1][0]}])
 last_date.to_json(assets_path + "data/president/president_current_odds_date.json", orient='records')
 
 #
-# prepare plotly charts
+# prepare flourish + plotly charts
 chart_data_raw = df.loc[:, out['name']]
 chart_data = (1 / chart_data_raw / current_data['p_raw'].sum()).apply(lambda x: round(x, 3))
 
+# flourish
+flourish_data = chart_data * 100
+flourish_data.insert(0, 'date', df['date'].apply(lambda x: x.))
+flourish_data.to_csv(flourish_path + "president_odds_history.csv", index=False)
+
+# plotly
 fig = go.Figure()
 for name in chart_data:
   fig.add_trace(go.Scatter(
