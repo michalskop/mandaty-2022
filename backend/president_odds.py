@@ -165,7 +165,7 @@ fig.update_layout(
     ),
     autosize=False,
     width=1000,
-    height=1000,
+    height=500,
     # showlegend=False,
     margin=dict(
         l=20,
