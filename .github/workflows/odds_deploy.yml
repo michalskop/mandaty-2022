@@ -19,7 +19,7 @@ jobs:
         run: |
           yarn install
           npx nuxi generate
-          cp -r frontend/.output/public/* docs/
+          cp -r .output/public/* ../docs/
 
       - name: Commit and push if it changed
         run: |-
