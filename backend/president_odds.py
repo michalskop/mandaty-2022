@@ -1,5 +1,6 @@
 """Probabilities from Tipsport bets."""
 
+import datetime
 import json
 import pandas as pd
 import plotly.graph_objects as go
@@ -8,6 +9,7 @@ import numpy as np
 url = "https://raw.githubusercontent.com/michalskop/tipsport.cz/main/2022/daily/b1013277721.csv"
 
 assets_path = "frontend/assets/"
+public_path = "frontend/public/shares/"
 
 election_date = '2023-01-01'
 
@@ -124,6 +126,79 @@ fig.update_layout(
 )
 # fig.update_xaxes(visible=False)
 fig.write_image(assets_path + "image/president_thumbnail.svg")
+
+# prepare plotly sharing picture
+fig = go.Figure()
+for name in chart_data.iloc[:, 0:5]:
+  fig.add_trace(go.Scatter(
+    x=df['date'],
+    y=chart_data[name],
+    mode='lines',
+    name=name,
+    line=dict(
+      width=5
+    )
+  ))
+
+# note: did not work with locale
+fig.update_xaxes(tickformat="%-d.%-m.%y")
+fig.update_layout(template='plotly_white')
+fig.layout.yaxis.tickformat = ',.0%'
+# fig.update_xaxes(range=[df['date'][0], election_date])
+fig.update_layout(
+    # plot=dict(
+    #   bgcolor="#772953"
+    # ),
+    
+    font=dict(
+      family='Ubuntu, verdana, arial, sans-serif',
+      color="#bbb",
+      size=30
+    ),
+    title=dict(
+      text="Mandáty.cz: Prezident/ka ČR 2023",
+      font=dict(
+        color="#772953",
+        size=45,
+        # bgcolor="#772953"
+      )
+    ),
+    autosize=False,
+    width=1000,
+    height=1000,
+    # showlegend=False,
+    margin=dict(
+        l=20,
+        r=10,
+        b=10,
+        t=150,
+        pad=0
+    ),
+    legend=dict(
+      font=dict(
+        size=35,
+        family='Ubuntu',
+        color="#888",
+      ),
+    ),
+    # paper_bgcolor="#772953",
+)
+# fig.update_xaxes(visible=False)
+
+# fig.add_annotation(x=35000, y=0.1,
+#             text="Mandáty.cz",
+#             showarrow=False)
+
+d = datetime.datetime.now().isoformat()
+filename = public_path + "shares/" + d + "_president.png"
+
+with open(assets_path + "data/president/president_share_image.json", "w") as fout:
+  dd = {
+    'filename': "shares/" + d + "_president.png"
+  }
+  json.dump(dd, fout)
+
+fig.write_image(filename)
 
 
 
