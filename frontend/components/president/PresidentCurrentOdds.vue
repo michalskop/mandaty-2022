@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
   import candidates from '@/assets/data/president/president_current_odds.json'
   import last_date from '@/assets/data/president/president_current_odds_date.json'
 

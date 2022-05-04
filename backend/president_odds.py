@@ -168,8 +168,8 @@ fig.update_layout(
     height=500,
     # showlegend=False,
     margin=dict(
-        l=20,
-        r=10,
+        l=80,
+        r=80,
         b=10,
         t=150,
         pad=0
@@ -190,7 +190,7 @@ fig.update_layout(
 #             showarrow=False)
 
 d = datetime.datetime.now().isoformat()
-filename = public_path + "shares/" + d + "_president.png"
+filename = public_path + d + "_president.png"
 
 with open(assets_path + "data/president/president_share_image.json", "w") as fout:
   dd = {
