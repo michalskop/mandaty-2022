@@ -1,0 +1,64 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-da655585.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/fest.vue",
+      "pages/index.vue",
+      "pages/snemovna.vue",
+      "pages/test.vue",
+      "layouts/custom.vue"
+    ],
+    "css": [
+      "entry.fd1c067c.css"
+    ],
+    "assets": [
+      "president_odds_history.92203ae0.svg",
+      "president_odds_history_small.0607bb74.svg"
+    ]
+  },
+  "pages/fest.vue": {
+    "file": "fest-b9b01198.mjs",
+    "src": "pages/fest.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-b3ea4e11.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/snemovna.vue": {
+    "file": "snemovna-1ea7862c.mjs",
+    "src": "pages/snemovna.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/test.vue": {
+    "file": "test-00add6a1.mjs",
+    "src": "pages/test.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/custom.vue": {
+    "file": "custom-bd2d47f3.mjs",
+    "src": "layouts/custom.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "custom.a71af3a7.css"
+    ]
+  }
+}
