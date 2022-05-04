@@ -16,7 +16,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          cd frontpage
+          cd frontpage/
           yarn install
           npx nuxi generate
 
