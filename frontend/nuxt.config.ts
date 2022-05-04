@@ -8,7 +8,11 @@ export default defineNuxtConfig({
   // css: [
   //   ~/assets/scss/main.scss;
   // ]
-  build: {
-    transpile: ['echarts']
+  // build: {
+  //   transpile: ['echarts']
+  // }
+  // https://github.com/nuxt/framework/pull/2655
+  app: {
+    baseURL: '/mandaty-2022/'
   }
 })
