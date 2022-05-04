@@ -19,6 +19,16 @@ jobs:
         run: |
           yarn install
           npx nuxi generate
+          cp -r frontend/.output/public/* docs/
+
+      - name: Commit and push if it changed
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Latest data: ${timestamp}" || exit 0
+          git push
 
       # - name: Deploy 🚀
       #   uses: JamesIves/github-pages-deploy-action@4.1.5
