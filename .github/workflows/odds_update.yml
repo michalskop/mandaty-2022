@@ -1,9 +1,9 @@
 name: Update president odds
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
   schedule:
     - cron: '10 4,16 * * *'
@@ -30,7 +30,7 @@ jobs:
         run: |
           pip install -r backend/requirements.txt
   
-      - name: get data
+      - name: run analyses create charts
         run: |-
           python backend/president_odds.py
       - name: Commit and push if it changed
