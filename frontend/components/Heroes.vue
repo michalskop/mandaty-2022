@@ -1,14 +1,19 @@
 <template>
-    <div class="">
-        <div class="container alert alert-success">
-            <h3 class="p-4">❤️ <small>Tento projekt vznikl jen díky podpoře:</small></h3>
-            <div class="d-flex flex-row flex-wrap justify-content-around">
-                <div v-for="(supporter, index) in supporters" :key="index" class="card p-2 m-2" :class="bgClass(supporter.date)">
-                    <h6 :class="textClass(supporter.date)">{{ supporter['given_name'] }} {{ supporter['family_name'] }}</h6>
-                </div>
-            </div>
+  <div class="">
+    <div class="container alert alert-success">
+      <h3 class="p-4">❤️ <small>Tento projekt vznikl jen díky podpoře:</small></h3>
+      <div class="d-flex flex-row flex-wrap justify-content-around">
+        <div v-for="(supporter, index) in supporters" :key="index" class="card p-2 m-2" :class="bgClass(supporter.date)">
+            <h6 :class="textClass(supporter.date)">{{ supporter['given_name'] }} {{ supporter['family_name'] }}</h6>
         </div>
+      </div>
+      <div class="mt-5">
+        <a href="https://www.darujme.cz/projekt/1200738" target="_blank">
+          <h4 class="outlink">Buďte jako oni, podpořte další rozvoj Mandáty.cz</h4>
+        </a>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 
