@@ -49,8 +49,9 @@ chart_data_raw = df.loc[:, out['name']]
 chart_data = (1 / chart_data_raw / current_data['p_raw'].sum()).apply(lambda x: round(x, 3))
 
 # flourish
-flourish_data = chart_data * 100
-flourish_data.insert(0, 'date', df['date'].apply(lambda x: x.))
+flourish_data = (chart_data * 100).apply(lambda x: round(x, 1))
+nice_dates = df['date'].apply(lambda x: str(datetime.datetime.fromisoformat(x).day) + ". " + str(datetime.datetime.fromisoformat(x).month) + ". " + datetime.datetime.fromisoformat(x).strftime("%y"))
+flourish_data.insert(0, 'date', nice_dates)
 flourish_data.to_csv(flourish_path + "president_odds_history.csv", index=False)
 
 # plotly
