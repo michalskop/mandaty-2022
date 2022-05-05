@@ -7,9 +7,13 @@
 
     <PresidentCurrentOdds />
 
+    <PresidentBetTipsport />
+
     <hr />
 
     <PresidentOddsChart />
+
+    <PresidentBetTipsport />
 
     <hr />
 

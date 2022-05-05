@@ -38,11 +38,6 @@ export default defineNuxtConfig({
           name: 'twitter:creator',
           content: '@skopmichal'
         },
-        {
-          hid: 'twitter:creator',
-          name: 'twitter:creator',
-          content: '@skopmichal'
-        },
         
       ],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
