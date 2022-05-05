@@ -1,6 +1,6 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-ec05082d.mjs",
+    "file": "entry-90ffbc29.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -19,7 +19,7 @@
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-f5e7e9e3.mjs",
+    "file": "fest-6ea111d4.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -27,7 +27,7 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-0c28e13a.mjs",
+    "file": "index-cd2a23a3.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -35,7 +35,7 @@
     ]
   },
   "pages/snemovna.vue": {
-    "file": "snemovna-eafb05a8.mjs",
+    "file": "snemovna-8e0e292e.mjs",
     "src": "pages/snemovna.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -43,7 +43,7 @@
     ]
   },
   "pages/test.vue": {
-    "file": "test-9427ff11.mjs",
+    "file": "test-5f0a036c.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -51,7 +51,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-e1967b52.mjs",
+    "file": "custom-fe9e7371.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
