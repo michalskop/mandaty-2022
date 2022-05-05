@@ -19,8 +19,6 @@
 
     <PresidentTable />
 
-    <hr />
-
     <!-- THIS IS A FRONTPAGE!
     <NuxtLink to="/">Frontpage</NuxtLink>
     <NuxtLink to="/test">Test</NuxtLink>
