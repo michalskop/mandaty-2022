@@ -5,6 +5,7 @@ import json
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
+import re
 
 url = "https://raw.githubusercontent.com/michalskop/tipsport.cz/main/2022/daily/b1013277721.csv"
 
@@ -15,6 +16,19 @@ flourish_path = "backend/data/"
 election_date = '2023-01-01'
 
 df = pd.read_csv(url)
+
+# remove additional text in '()'
+nice_columns = []
+for c in df.columns:
+  nc = c
+  ar = re.findall('\(.{1,}\)', c)
+  for a in ar:
+    nc = nc.replace(a, '')
+  nc = nc.strip()
+  nice_columns.append(nc)
+df.columns = nice_columns
+
+
 
 # calculate probabilities, cut-off all with odds > 1/sum(odd) (100, but adjusted for Tipsport's margin)
 current_data = df.iloc[-1, 1:].T.to_frame().reset_index()

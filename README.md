@@ -1,0 +1,1 @@
+# Mandáty.cz
