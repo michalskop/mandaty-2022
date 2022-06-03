@@ -61,11 +61,6 @@
             content: 'Mandáty.cz - nejpřesnější denně aktualizované modely pro prezidentské volby 2023.'
           },
           {
-            hid: 'og:description',
-            name: 'og:description',
-            content: 'Mandáty.cz - nejpřesnější denně aktualizované modely pro prezidentské volby 2023'
-          },
-          {
             hid: 'og:image',
             name: 'og:image',
             content: "/" + this.data()['fn']
