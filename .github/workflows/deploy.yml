@@ -1,4 +1,4 @@
-name: Deploy president odds
+name: Deploy web
 
 on:
   push:
