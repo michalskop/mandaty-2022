@@ -1,6 +1,6 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-4fc41998.mjs",
+    "file": "entry-78e61f36.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -15,12 +15,12 @@
       "entry.c6aba017.css"
     ],
     "assets": [
-      "president_odds_history.d154553a.svg",
-      "president_odds_history_small.4ec2fed4.svg"
+      "president_odds_history.af0a25b7.svg",
+      "president_odds_history_small.c7e6a6cb.svg"
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-07a88677.mjs",
+    "file": "archiv-520dcb42.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -28,7 +28,7 @@
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-1789e876.mjs",
+    "file": "fest-3f5aca5a.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -36,7 +36,7 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-f771e06b.mjs",
+    "file": "index-3a2bea8d.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -44,7 +44,7 @@
     ]
   },
   "pages/snemovna.vue": {
-    "file": "snemovna-ea729af4.mjs",
+    "file": "snemovna-0d92f2f5.mjs",
     "src": "pages/snemovna.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -52,7 +52,7 @@
     ]
   },
   "pages/test.vue": {
-    "file": "test-115f1df7.mjs",
+    "file": "test-31afd6ff.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -60,7 +60,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-f886ec78.mjs",
+    "file": "custom-74ab2db9.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
