@@ -9,6 +9,7 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu">
             <li><button class="dropdown-item" type="button"><NuxtLink to="/">Prezidentské volby 2023</NuxtLink></button></li>
+            <li><button class="dropdown-item" type="button"><NuxtLink to="/snemovna">Sněmovna 2021-2025</NuxtLink></button></li>
             <li><button class="dropdown-item" type="button"><NuxtLink to="/archiv">Archiv</NuxtLink></button></li>
           </ul>
         </div>

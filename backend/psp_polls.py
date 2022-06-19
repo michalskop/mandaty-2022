@@ -316,6 +316,11 @@ fig.layout.yaxis.tickformat = ',.0%'
 # fig.update_xaxes(range=[df['date'][0], election_date])
 fig.update_layout(
   title="Sněmovna 2021-2025",
+  titlefont=dict(
+    family='Ubuntu, verdana, arial, sans-serif',
+    size=16,
+    color='#e95420'
+  ),
   autosize=False,
   width=300,
   height=135,
@@ -329,6 +334,8 @@ fig.update_layout(
   ),
 )
 fig.update_yaxes(rangemode="tozero")
+fig.update_xaxes(showticklabels=False)
+fig.update_yaxes(showticklabels=False)
 fig.write_image(assets_path + "image/psp_thumbnail.svg")
 
 # sharing picture
@@ -384,7 +391,7 @@ fig.update_layout(
     legend=dict(
       font=dict(
         size=35,
-        family='Ubuntu',
+        family='Ubuntu, verdana, arial, sans-serif',
         color="#888",
       ),
     ),

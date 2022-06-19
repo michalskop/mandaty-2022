@@ -135,6 +135,11 @@ fig.layout.yaxis.tickformat = ',.0%'
 # fig.update_xaxes(range=[df['date'][0], election_date])
 fig.update_layout(
     title="Prezident/ka ČR 2023",
+    titlefont=dict(
+      family='Ubuntu, verdana, arial, sans-serif',
+      size=16,
+      color='#e95420'
+    ),
     autosize=False,
     width=300,
     height=135,
@@ -148,6 +153,8 @@ fig.update_layout(
     ),
 )
 fig.update_yaxes(rangemode="tozero")
+fig.update_xaxes(showticklabels=False)
+fig.update_yaxes(showticklabels=False)
 # fig.update_xaxes(visible=False)
 fig.write_image(assets_path + "image/president_thumbnail.svg")
 
