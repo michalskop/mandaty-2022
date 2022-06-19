@@ -183,9 +183,9 @@ stats = stats.sort_values(['seats', 'hi', 'lo'], ascending=[False, False, False]
 
 stats = stats.fillna(0)
 
-stats.to_json(assets_path + "psp/stats.json", force_ascii=False, orient='records')
+stats.to_json(assets_path + "data/psp/stats.json", force_ascii=False, orient='records')
 
-with open(assets_path + "psp/current_seats.json", "w") as fout:
+with open(assets_path + "data/psp/current_seats.json", "w") as fout:
     rich = {
         "data": stats[stats['hi'] > 0].to_dict(orient='records'),
         "date": d.max()['middle_date'].isoformat()[0:10]
