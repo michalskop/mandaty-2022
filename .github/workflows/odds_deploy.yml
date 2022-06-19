@@ -30,7 +30,7 @@ jobs:
           find docs/_nuxt/president_odds_history* -mtime +30 -exec rm {} \;
           find docs/_nuxt/fest-* -mtime +30 -exec rm {} \;
           find docs/_nuxt/test-* -mtime +30 -exec rm {} \;
-          find docs/_nuxt/stemovna-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/snemovna-* -mtime +30 -exec rm {} \;
 
 
 
