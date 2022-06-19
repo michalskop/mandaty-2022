@@ -23,14 +23,14 @@ jobs:
 
       - name: Remove old files 🗑️
         run: |
-          find docs/_nuxt/archiv- -mtime +30 -exec rm {} \;
-          find docs/_nuxt/custom- -mtime +30 -exec rm {} \;
-          find docs/_nuxt/entry- -mtime +30 -exec rm {} \;
-          find docs/_nuxt/index- -mtime +30 -exec rm {} \;
-          find docs/_nuxt/president_odds_history -mtime +30 -exec rm {} \;
-          find docs/_nuxt/fest- -mtime +30 -exec rm {} \;
-          find docs/_nuxt/test- -mtime +30 -exec rm {} \;
-          find docs/_nuxt/stemovna- -mtime +30 -exec rm {} \;
+          find docs/_nuxt/archiv-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/custom-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/entry-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/index-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/president_odds_history* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/fest-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/test-* -mtime +30 -exec rm {} \;
+          find docs/_nuxt/stemovna-* -mtime +30 -exec rm {} \;
 
 
 
