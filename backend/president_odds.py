@@ -98,6 +98,7 @@ fig.update_layout(
         pad=0
     ),
 )
+fig.update_yaxes(rangemode="tozero")
 fig.write_image(assets_path + "image/president_odds_history.svg")
 
 fig.update_layout(
@@ -146,6 +147,7 @@ fig.update_layout(
         pad=0
     ),
 )
+fig.update_yaxes(rangemode="tozero")
 # fig.update_xaxes(visible=False)
 fig.write_image(assets_path + "image/president_thumbnail.svg")
 
@@ -166,6 +168,7 @@ for name in chart_data.iloc[:, 0:5]:
 fig.update_xaxes(tickformat="%-d.%-m.%y")
 fig.update_layout(template='plotly_white')
 fig.layout.yaxis.tickformat = ',.0%'
+fig.update_yaxes(rangemode="tozero")
 # fig.update_xaxes(range=[df['date'][0], election_date])
 fig.update_layout(
     # plot=dict(
