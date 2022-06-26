@@ -11,8 +11,8 @@
           <tr>
             <th></th>
             <th>Datum&nbsp;<small>(střed)</small></th>
-            <th>Kandidát 1</th>
-            <th>Kandidát 2</th>
+            <th>Kandidát/ka1</th>
+            <th>Kandidát/ka 2</th>
             <th>% 1</th>
             <th>% 2</th>
           </tr>
