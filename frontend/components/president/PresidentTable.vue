@@ -30,9 +30,9 @@
   </div>
 </template>
 
-<script lang="ts">
-  import polls from '@/assets/data/president/president_bets_table.json'
-  import candidates from '@/assets/data/president/president_bets_table_candidates.json'
+<script>
+  import polls from '@/assets/data/president/president_polls_table.json'
+  import candidates from '@/assets/data/president/president_polls_table_candidates.json'
 
   export default {
     data: function() {
@@ -42,7 +42,7 @@
       }
     },
     methods: {
-      formatDate (d: string) {
+      formatDate (d) {
         return new Date(d).toLocaleDateString('cs')
       }
     }

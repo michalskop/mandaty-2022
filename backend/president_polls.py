@@ -12,8 +12,8 @@ models = pd.read_csv(url_models)
 
 groupby = ['poll:identifier', 'pollster:id', 'choice:id']
 t = models.groupby(groupby)['value'].sum().unstack().reset_index()
-t.columns
-t.index
+# t.columns
+# t.index
 
 tm = polls.merge(t, left_on=['identifier', 'pollster:id'], right_on=['poll:identifier', 'pollster:id'])
 tm = tm.sort_values('middle_date', ascending=False)
@@ -23,7 +23,7 @@ tms = tm.loc[:, t.columns[2:]].sort_values([tm.index[0], tm.index[1], tm.index[2
 
 out = tm.loc[:, tm.columns[0: len(tm.columns) - len(t.columns[2:]) - 1]].join(tms)
 
-out.to_json(app_path + "president/president_bets_table.json", orient='records')
+out.to_json(app_path + "president/president_polls_table.json", orient='records')
 
 out2 = []
 for c in tms.columns:
@@ -31,4 +31,4 @@ for c in tms.columns:
     out2.append(c)
 
 names = pd.DataFrame([{'names': out2}])
-names.to_json(app_path + "president/president_bets_table_candidates.json", orient='records')
+names.to_json(app_path + "president/president_polls_table_candidates.json", orient='records')

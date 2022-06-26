@@ -19,6 +19,10 @@
 
     <hr />
 
+    <President2Table />
+
+    <hr />
+
     <PresidentTable />
 
   </div>
