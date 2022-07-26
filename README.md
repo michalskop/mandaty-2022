@@ -1,3 +1,3 @@
 # Mandáty.cz 2022
 
-https://mandaty.cz
+site: https://mandaty.cz
