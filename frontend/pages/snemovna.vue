@@ -13,5 +13,13 @@
 
     <SnemovnaPollsChart />
 
+    <hr />
+
+    <SnemovnaPollsPartiesTables />
+
+    <hr />
+
+    <SnemovnaPollsCoalitionsTables />
+
   </div>
 </template>

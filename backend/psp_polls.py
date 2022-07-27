@@ -14,6 +14,7 @@ choices_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhp47e91OazMSiu5
 
 assets_path = "frontend/assets/"
 public_path = "frontend/public/shares/"
+app_path = "frontend/assets/data/"
 flourish_path = "backend/data/"
 data_path = "backend/data/"
 
@@ -419,3 +420,39 @@ chartdata.insert(0, 'Region name', 'ČR')
 chartdata.reset_index(drop=True).to_csv(flourish_path + "psp_polls_current_overview.csv", index=False)
 
 
+# TABLES
+# parties
+source1 = source[source['tags'] == 'parties']
+allvaluesp = source1.iloc[:, (cn + 1):]
+allvaluesp = allvaluesp.dropna(axis=1, how='all')
+# change % to values %
+allvaluesperc = allvaluesp.apply(lambda x: x.str.rstrip('%').astype('float'), axis=0)
+
+allvaluesperc = allvaluesperc.sort_values(by = [allvaluesperc.index[-1], allvaluesperc.index[-2]], axis = 1, ascending = False)
+
+t = source1.loc[:, ['poll:identifier', 'pollster:id', 'middle_date']].join(allvaluesperc, how='right')
+
+t = t.sort_values(['middle_date'], ascending=[False])
+
+t.to_json(app_path + "psp/psp_polls_parties_table.json", orient='records')
+
+names = pd.DataFrame([{'names': allvaluesperc.columns}])
+names.to_json(app_path + "psp/psp_polls_parties_candidates.json", orient='records')
+
+# coalitions
+source1 = source[source['tags'] == 'coalitions']
+allvaluesp = source1.iloc[:, (cn + 1):]
+allvaluesp = allvaluesp.dropna(axis=1, how='all')
+# change % to values %
+allvaluesperc = allvaluesp.apply(lambda x: x.str.rstrip('%').astype('float'), axis=0)
+
+allvaluesperc = allvaluesperc.sort_values(by = [allvaluesperc.index[-1], allvaluesperc.index[-2]], axis = 1, ascending = False)
+
+t = source1.loc[:, ['poll:identifier', 'pollster:id', 'middle_date']].join(allvaluesperc, how='right')
+
+t = t.sort_values(['middle_date'], ascending=[False])
+
+t.to_json(app_path + "psp/psp_polls_coalitions_table.json", orient='records')
+
+names = pd.DataFrame([{'names': allvaluesperc.columns}])
+names.to_json(app_path + "psp/psp_polls_coalitions_candidates.json", orient='records')
