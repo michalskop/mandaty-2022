@@ -9,13 +9,13 @@
 
     <PresidentCurrentOdds />
 
-    <PresidentBetTipsport />
+    <!-- <PresidentBetTipsport /> -->
 
     <hr />
 
     <PresidentOddsChart />
 
-    <PresidentBetTipsport />
+    <!-- <PresidentBetTipsport /> -->
 
     <hr />
 
