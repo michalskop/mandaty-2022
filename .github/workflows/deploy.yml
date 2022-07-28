@@ -11,6 +11,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait # wait for calculations from all polls, 4 minutes
+        run: |-
+          sleep 240
+
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
