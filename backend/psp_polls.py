@@ -436,6 +436,7 @@ for pollster in pollsters:
 
 fulldata = pd.concat(muses).sort_values(by=['Datum', 'Strana']).reset_index(drop=True).loc[:, ['Agentura', 'Datum', 'Hodnota', 'Průměr', 'Strana']]
 fulldata['size'] = 1
+fulldata = fulldata.astype({'Datum': str})
 
 # measured values
 source1.loc[:, ['pollster:id', 'middle_date']]
@@ -445,6 +446,14 @@ valss = vals.unstack().reset_index()
 valss.columns = ['Strana', 'level_1', 'Hodnota']
 valss = valss.join(pd.DataFrame(valss['level_1'].values.tolist()))
 valss.columns = ['Strana', 'level_1', 'Hodnota', 'Agentura', 'Datum']
+valss['size'] = (valss['Agentura'] == 'volby+STEM') * 6 + 6
+valss['Průměr'] = pd.NA
+valss = valss.astype({'Datum': str})
+
+concats = [fulldata, valss.loc[:, fulldata.columns]]
+
+fchart = pd.concat(concats)
+fchart.to_csv(flourish_path + "psp_polls_fchart.csv", index=False)
 
 # TABLES
 # parties
