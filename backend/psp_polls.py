@@ -419,6 +419,32 @@ chartdata = pd.DataFrame(round(mu.iloc[-1] * 100).astype(int)).T
 chartdata.insert(0, 'Region name', 'ČR')
 chartdata.reset_index(drop=True).to_csv(flourish_path + "psp_polls_current_overview.csv", index=False)
 
+# Full chart
+# https://public.flourish.studio/visualisation/10768917/
+# averages
+pollsters = source1['pollster:id'].unique()
+
+mus = mu.unstack().reset_index()
+mus.columns = ['Průměr', 'Datum', 'Hodnota']
+mus['Strana'] = mus['Průměr']
+
+muses = []
+for pollster in pollsters:
+  item = mus.copy()
+  item['Agentura'] = pollster
+  muses.append(item)
+
+fulldata = pd.concat(muses).sort_values(by=['Datum', 'Strana']).reset_index(drop=True).loc[:, ['Agentura', 'Datum', 'Hodnota', 'Průměr', 'Strana']]
+fulldata['size'] = 1
+
+# measured values
+source1.loc[:, ['pollster:id', 'middle_date']]
+vals = allvalues.copy()
+vals.index = source1.loc[:, ['pollster:id', 'middle_date']]
+valss = vals.unstack().reset_index()
+valss.columns = ['Strana', 'level_1', 'Hodnota']
+valss = valss.join(pd.DataFrame(valss['level_1'].values.tolist()))
+valss.columns = ['Strana', 'level_1', 'Hodnota', 'Agentura', 'Datum']
 
 # TABLES
 # parties
