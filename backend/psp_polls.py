@@ -523,6 +523,6 @@ for mm in midmonths:
 
 rows.index = [datetime.datetime.strftime(mm, "%m/%y") for mm in midmonths]
 
-origin.index = origin['party']
-origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False)
+origin.index = origin['strana']
+origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False, decimal=',')
 
