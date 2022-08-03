@@ -1,5 +1,6 @@
 """Testing psp again, always better."""
 
+from calendar import month
 import datetime
 import json
 import math
@@ -491,3 +492,37 @@ t.to_json(app_path + "psp/psp_polls_coalitions_table.json", orient='records')
 
 names = pd.DataFrame([{'names': allvaluesperc.columns}])
 names.to_json(app_path + "psp/psp_polls_coalitions_candidates.json", orient='records')
+
+# RACE CHART
+origin = pd.read_csv(data_path + "origin_race_chart.csv")
+
+mx = mu.index.max()
+mx.month
+mx.year
+
+limits = pd.date_range(mu.index.min() - datetime.timedelta(days=28),mu.index.max() + datetime.timedelta(days=28), freq='MS').tolist()
+midmonths = []
+i = 0
+for l in limits[0:-1]:
+  midmonths.append((limits[i + 1] - l) / 2  + l)
+  i += 1
+
+rows = pd.DataFrame()
+for mm in midmonths:
+  greater = mu.index[mu.index > mm]
+  smaller = mu.index[mu.index < mm]
+  if len(greater) == 0:
+    row = round(mu.iloc[-1, :] * 1000) / 10
+  elif len(smaller) == 0:
+    row = round(mu.iloc[0, :] * 1000) / 10
+  else:
+    d1 = mm - smaller[-1]
+    d2 = greater[0] - mm
+    row = round((d2 / (d1 + d2) * mu.loc[smaller[-1].isoformat()[0:10], :] + d1 / (d1 + d2) * mu.loc[greater[0].isoformat()[0:10], :]) * 1000) / 10
+  rows = pd.concat([rows, pd.DataFrame(row).T])
+
+rows.index = [datetime.datetime.strftime(mm, "%m/%y") for mm in midmonths]
+
+origin.index = origin['party']
+origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False)
+
