@@ -74,7 +74,8 @@ distances.T.drop_duplicates(inplace=True)
 w = 1 / np.exp(distances / 30)
 ws = w.sum(axis=1)
 # weighted values - mu
-mu = np.matmul(w, selected_values).divide(np.asarray(ws), axis=0)
+# replacing missing values with 0
+mu = np.matmul(w, selected_values.fillna(0)).divide(np.asarray(ws), axis=0)
 mu.columns = selected_parties
 mun = mu * sample_n
 # sigma
