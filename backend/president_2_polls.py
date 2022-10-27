@@ -7,8 +7,8 @@ app_path = "frontend/assets/data/"
 url_polls = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmWwVHMSkcPS691uB39ZoO499F5wewcAzn7Ee5x_p0bm7U5TRcOtgcU7QsEQWD891bPuUSF7toO8tQ/pub?gid=325071040&single=true&output=csv"
 url_models = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmWwVHMSkcPS691uB39ZoO499F5wewcAzn7Ee5x_p0bm7U5TRcOtgcU7QsEQWD891bPuUSF7toO8tQ/pub?gid=2068024448&single=true&output=csv"
 
-polls = pd.read_csv(url_polls)
-models = pd.read_csv(url_models)
+# polls = pd.read_csv(url_polls)
+# models = pd.read_csv(url_models)
 
 polls = pd.read_csv(url_polls)
 models = pd.read_csv(url_models)
