@@ -42,6 +42,7 @@ for i in range(len(source.columns)):
 
 # filter only parties, not coalitions
 source1 = source[source['tags'] == 'parties']
+middle_dates = source1['middle_date']
 
 # parties, filter out coalitions
 allvaluesp = source1.iloc[:, (cn + 1):]
@@ -199,6 +200,9 @@ with open(assets_path + "data/psp/current_seats.json", "w") as fout:
 #
 # prepare flourish + plotly charts
 mu.sort_values([mu.index.max()], ascending=False, axis=1, inplace=True)
+mu.sort_index(inplace=True)
+allvalues.index = middle_dates
+allvalues.sort_index(inplace=True)
 # lo + hi: 
 lo = binom.ppf(0.05, sample_n, mu) / sample_n
 hi = binom.ppf(0.95, sample_n, mu) / sample_n
