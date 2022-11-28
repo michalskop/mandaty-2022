@@ -8,6 +8,7 @@ import pandas as pd
 
 # Mandaty.cz
 app_path = "frontend/assets/data/"
+flourish_path = "backend/data/"
 
 url_polls = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmWwVHMSkcPS691uB39ZoO499F5wewcAzn7Ee5x_p0bm7U5TRcOtgcU7QsEQWD891bPuUSF7toO8tQ/pub?gid=325071040&single=true&output=csv"
 url_models = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmWwVHMSkcPS691uB39ZoO499F5wewcAzn7Ee5x_p0bm7U5TRcOtgcU7QsEQWD891bPuUSF7toO8tQ/pub?gid=1112064865&single=true&output=csv"
@@ -39,6 +40,7 @@ names = pd.DataFrame([{'names': out2}])
 names.to_json(app_path + "president/president_polls_table_candidates.json", orient='records')
 
 ## Flourish
+# https://app.flourish.studio/visualisation/11824842/edit
 election_date = '2023-01-13'
 sheetkey = "1jQYnndcOqY_zkY6VXpY-8HcNUUcRDF54Kn4QYetYX4k"
 sheetname = "2023-1"
@@ -84,4 +86,21 @@ out = pd.DataFrame(columns=header)
 for row in df.iterrows():
   for c in selected:
     item = {'datum': row[1]['middle_date'], 'kandidát/ka': c, 'model': row[1][c], 'velikost': 2, 'agentura': row[1]['pollster:id'], 'kandidát': '', 'agentura1': 'agentura'}
-    out = out.append(item, ignore_index=True)
+    out = pd.concat([out, pd.DataFrame([item])], axis=0)
+
+# model values - mas
+for row in mas.iterrows():
+  for c in selected:
+    item = {'datum': datetime.datetime.strftime(row[1]['date'], '%Y-%m-%d'), 'kandidát/ka': c, 'model': round(row[1][c], 2), 'velikost': 0.2, 'agentura': '', 'kandidát': c, 'agentura1': 'průběžný vážený průměr'}
+    out = pd.concat([out, pd.DataFrame([item])], axis=0)
+
+# save to csv
+out.to_csv(flourish_path + "president_polls_fchart.csv", index=False)
+
+# https://app.flourish.studio/visualisation/11827584/edit
+out2 = pd.DataFrame(columns=['kandidát/ka'] + selected)
+item = {'kandidát/ka': 'volební zisk'}
+for c in selected:
+  item[c] = round(mas.loc[mas['date'] == lday, c][0], 1)
+out2 = pd.concat([out2, pd.DataFrame([item])], axis=0)
+out2.to_csv(flourish_path + "president_polls_fchart_current.csv", index=False)
