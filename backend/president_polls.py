@@ -103,4 +103,5 @@ item = {'kandidát/ka': 'volební zisk'}
 for c in selected:
   item[c] = round(mas.loc[mas['date'] == lday, c][0], 1)
 out2 = pd.concat([out2, pd.DataFrame([item])], axis=0)
+out2.loc[:, selected] = out2.loc[:, selected].sort_values(0, ascending=False, axis=1)
 out2.to_csv(flourish_path + "president_polls_fchart_current.csv", index=False)
