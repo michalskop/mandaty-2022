@@ -98,10 +98,11 @@ for row in mas.iterrows():
 out.to_csv(flourish_path + "president_polls_fchart.csv", index=False)
 
 # https://app.flourish.studio/visualisation/11827584/edit
-out2 = pd.DataFrame(columns=['kandidát/ka'] + selected)
-item = {'kandidát/ka': 'volební zisk'}
+item = {}
 for c in selected:
-  item[c] = round(mas.loc[mas['date'] == lday, c][0], 1)
-out2 = pd.concat([out2, pd.DataFrame([item])], axis=0)
-out2.loc[:, selected] = out2.loc[:, selected].sort_values(0, ascending=False, axis=1)
+  item[c] = round(mas.iloc[0][c], 1)
+out2 = pd.DataFrame([item])
+out2.sort_values(0, ascending=False, axis=1, inplace=True)
+item = {'kandidát/ka': 'volební zisk'}
+out2 = pd.concat([pd.DataFrame([item]), out2], axis=1)
 out2.to_csv(flourish_path + "president_polls_fchart_current.csv", index=False)
