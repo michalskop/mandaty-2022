@@ -1,4 +1,13 @@
 datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
+2022-12-04,Pavel,23.0,2,STEM,,agentura
+2022-12-04,Babiš,30.1,2,STEM,,agentura
+2022-12-04,Nerudová,26.5,2,STEM,,agentura
+2022-12-04,Fischer,6.2,2,STEM,,agentura
+2022-12-04,Středula,3.9,2,STEM,,agentura
+2022-12-04,Hilšer,5.1,2,STEM,,agentura
+2022-12-04,Bašta,2.9,2,STEM,,agentura
+2022-12-04,Zima,1.5,2,STEM,,agentura
+2022-12-04,Diviš,0.9,2,STEM,,agentura
 2022-11-23,Pavel,23.5,2,Median,,agentura
 2022-11-23,Babiš,26.5,2,Median,,agentura
 2022-11-23,Nerudová,28.0,2,Median,,agentura
@@ -6,8 +15,8 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-11-23,Středula,3.5,2,Median,,agentura
 2022-11-23,Hilšer,3.5,2,Median,,agentura
 2022-11-23,Bašta,,2,Median,,agentura
-2022-11-23,Rohanová,0.5,2,Median,,agentura
 2022-11-23,Zima,,2,Median,,agentura
+2022-11-23,Diviš,,2,Median,,agentura
 2022-11-26,Pavel,25.3,2,Ipsos,,agentura
 2022-11-26,Babiš,29.7,2,Ipsos,,agentura
 2022-11-26,Nerudová,25.0,2,Ipsos,,agentura
@@ -15,8 +24,8 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-11-26,Středula,3.1,2,Ipsos,,agentura
 2022-11-26,Hilšer,4.2,2,Ipsos,,agentura
 2022-11-26,Bašta,3.6,2,Ipsos,,agentura
-2022-11-26,Rohanová,1.5,2,Ipsos,,agentura
 2022-11-26,Zima,1.2,2,Ipsos,,agentura
+2022-11-26,Diviš,,2,Ipsos,,agentura
 2022-11-18,Pavel,26.5,2,Data Collect+Kantar,,agentura
 2022-11-18,Babiš,27.0,2,Data Collect+Kantar,,agentura
 2022-11-18,Nerudová,23.5,2,Data Collect+Kantar,,agentura
@@ -24,8 +33,8 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-11-18,Středula,4.0,2,Data Collect+Kantar,,agentura
 2022-11-18,Hilšer,4.0,2,Data Collect+Kantar,,agentura
 2022-11-18,Bašta,,2,Data Collect+Kantar,,agentura
-2022-11-18,Rohanová,,2,Data Collect+Kantar,,agentura
 2022-11-18,Zima,,2,Data Collect+Kantar,,agentura
+2022-11-18,Diviš,,2,Data Collect+Kantar,,agentura
 2022-10-16,Pavel,22.5,2,Median,,agentura
 2022-10-16,Babiš,22.0,2,Median,,agentura
 2022-10-16,Nerudová,15.0,2,Median,,agentura
@@ -33,8 +42,8 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-10-16,Středula,7.0,2,Median,,agentura
 2022-10-16,Hilšer,4.5,2,Median,,agentura
 2022-10-16,Bašta,,2,Median,,agentura
-2022-10-16,Rohanová,,2,Median,,agentura
 2022-10-16,Zima,,2,Median,,agentura
+2022-10-16,Diviš,,2,Median,,agentura
 2022-10-09,Pavel,27.9,2,Ipsos,,agentura
 2022-10-09,Babiš,23.3,2,Ipsos,,agentura
 2022-10-09,Nerudová,16.9,2,Ipsos,,agentura
@@ -42,8 +51,8 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-10-09,Středula,4.7,2,Ipsos,,agentura
 2022-10-09,Hilšer,6.7,2,Ipsos,,agentura
 2022-10-09,Bašta,,2,Ipsos,,agentura
-2022-10-09,Rohanová,,2,Ipsos,,agentura
 2022-10-09,Zima,,2,Ipsos,,agentura
+2022-10-09,Diviš,,2,Ipsos,,agentura
 2022-09-30,Pavel,23.0,2,STEM/MARK,,agentura
 2022-09-30,Babiš,17.0,2,STEM/MARK,,agentura
 2022-09-30,Nerudová,14.0,2,STEM/MARK,,agentura
@@ -51,8 +60,8 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-09-30,Středula,6.0,2,STEM/MARK,,agentura
 2022-09-30,Hilšer,6.0,2,STEM/MARK,,agentura
 2022-09-30,Bašta,,2,STEM/MARK,,agentura
-2022-09-30,Rohanová,,2,STEM/MARK,,agentura
 2022-09-30,Zima,,2,STEM/MARK,,agentura
+2022-09-30,Diviš,1,2,STEM/MARK,,agentura
 2022-09-15,Pavel,24.0,2,Median,,agentura
 2022-09-15,Babiš,23.5,2,Median,,agentura
 2022-09-15,Nerudová,10.0,2,Median,,agentura
@@ -60,131 +69,140 @@ datum,kandidát/ka,model,velikost,agentura,kandidát,agentura1
 2022-09-15,Středula,7.5,2,Median,,agentura
 2022-09-15,Hilšer,5.5,2,Median,,agentura
 2022-09-15,Bašta,,2,Median,,agentura
-2022-09-15,Rohanová,,2,Median,,agentura
 2022-09-15,Zima,,2,Median,,agentura
-2022-12-02,Pavel,24.94,0.2,,Pavel,průběžný vážený průměr
-2022-12-02,Babiš,27.11,0.2,,Babiš,průběžný vážený průměr
-2022-12-02,Nerudová,24.26,0.2,,Nerudová,průběžný vážený průměr
-2022-12-02,Fischer,6.07,0.2,,Fischer,průběžný vážený průměr
-2022-12-02,Středula,3.81,0.2,,Středula,průběžný vážený průměr
-2022-12-02,Hilšer,4.12,0.2,,Hilšer,průběžný vážený průměr
-2022-12-02,Bašta,1.24,0.2,,Bašta,průběžný vážený průměr
-2022-12-02,Rohanová,0.66,0.2,,Rohanová,průběžný vážený průměr
-2022-12-02,Zima,0.41,0.2,,Zima,průběžný vážený průměr
-2022-11-25,Pavel,24.93,0.2,,Pavel,průběžný vážený průměr
-2022-11-25,Babiš,26.99,0.2,,Babiš,průběžný vážený průměr
-2022-11-25,Nerudová,24.23,0.2,,Nerudová,průběžný vážený průměr
-2022-11-25,Fischer,6.06,0.2,,Fischer,průběžný vážený průměr
-2022-11-25,Středula,3.85,0.2,,Středula,průběžný vážený průměr
-2022-11-25,Hilšer,4.11,0.2,,Hilšer,průběžný vážený průměr
-2022-11-25,Bašta,1.13,0.2,,Bašta,průběžný vážený průměr
-2022-11-25,Rohanová,0.62,0.2,,Rohanová,průběžný vážený průměr
-2022-11-25,Zima,0.38,0.2,,Zima,průběžný vážený průměr
-2022-11-18,Pavel,25.05,0.2,,Pavel,průběžný vážený průměr
-2022-11-18,Babiš,26.5,0.2,,Babiš,průběžný vážený průměr
-2022-11-18,Nerudová,23.49,0.2,,Nerudová,průběžný vážený průměr
-2022-11-18,Fischer,6.08,0.2,,Fischer,průběžný vážený průměr
-2022-11-18,Středula,4.05,0.2,,Středula,průběžný vážený průměr
-2022-11-18,Hilšer,4.19,0.2,,Hilšer,průběžný vážený průměr
-2022-11-18,Bašta,0.82,0.2,,Bašta,průběžný vážený průměr
-2022-11-18,Rohanová,0.47,0.2,,Rohanová,průběžný vážený průměr
-2022-11-18,Zima,0.27,0.2,,Zima,průběžný vážený průměr
-2022-11-11,Pavel,24.95,0.2,,Pavel,průběžný vážený průměr
-2022-11-11,Babiš,25.81,0.2,,Babiš,průběžný vážený průměr
-2022-11-11,Nerudová,22.28,0.2,,Nerudová,průběžný vážený průměr
-2022-11-11,Fischer,6.3,0.2,,Fischer,průběžný vážený průměr
-2022-11-11,Středula,4.35,0.2,,Středula,průběžný vážený průměr
-2022-11-11,Hilšer,4.38,0.2,,Hilšer,průběžný vážený průměr
-2022-11-11,Bašta,0.7,0.2,,Bašta,průběžný vážený průměr
-2022-11-11,Rohanová,0.41,0.2,,Rohanová,průběžný vážený průměr
-2022-11-11,Zima,0.23,0.2,,Zima,průběžný vážený průměr
-2022-11-04,Pavel,24.83,0.2,,Pavel,průběžný vážený průměr
-2022-11-04,Babiš,24.91,0.2,,Babiš,průběžný vážený průměr
-2022-11-04,Nerudová,20.71,0.2,,Nerudová,průběžný vážený průměr
-2022-11-04,Fischer,6.58,0.2,,Fischer,průběžný vážený průměr
-2022-11-04,Středula,4.73,0.2,,Středula,průběžný vážený průměr
-2022-11-04,Hilšer,4.63,0.2,,Hilšer,průběžný vážený průměr
-2022-11-04,Bašta,0.55,0.2,,Bašta,průběžný vážený průměr
-2022-11-04,Rohanová,0.32,0.2,,Rohanová,průběžný vážený průměr
-2022-11-04,Zima,0.18,0.2,,Zima,průběžný vážený průměr
-2022-10-28,Pavel,24.7,0.2,,Pavel,průběžný vážený průměr
-2022-10-28,Babiš,23.95,0.2,,Babiš,průběžný vážený průměr
-2022-10-28,Nerudová,19.04,0.2,,Nerudová,průběžný vážený průměr
-2022-10-28,Fischer,6.88,0.2,,Fischer,průběžný vážený průměr
-2022-10-28,Středula,5.14,0.2,,Středula,průběžný vážený průměr
-2022-10-28,Hilšer,4.89,0.2,,Hilšer,průběžný vážený průměr
-2022-10-28,Bašta,0.39,0.2,,Bašta,průběžný vážený průměr
-2022-10-28,Rohanová,0.23,0.2,,Rohanová,průběžný vážený průměr
-2022-10-28,Zima,0.13,0.2,,Zima,průběžný vážený průměr
-2022-10-21,Pavel,24.58,0.2,,Pavel,průběžný vážený průměr
-2022-10-21,Babiš,23.11,0.2,,Babiš,průběžný vážený průměr
-2022-10-21,Nerudová,17.56,0.2,,Nerudová,průběžný vážený průměr
-2022-10-21,Fischer,7.14,0.2,,Fischer,průběžný vážený průměr
-2022-10-21,Středula,5.51,0.2,,Středula,průběžný vážený průměr
+2022-09-15,Diviš,,2,Median,,agentura
+2022-12-09,Pavel,24.31,0.2,,Pavel,průběžný vážený průměr
+2022-12-09,Babiš,28.09,0.2,,Babiš,průběžný vážený průměr
+2022-12-09,Nerudová,24.99,0.2,,Nerudová,průběžný vážený průměr
+2022-12-09,Fischer,6.12,0.2,,Fischer,průběžný vážený průměr
+2022-12-09,Středula,3.84,0.2,,Středula,průběžný vážený průměr
+2022-12-09,Hilšer,4.44,0.2,,Hilšer,průběžný vážený průměr
+2022-12-09,Bašta,1.78,0.2,,Bašta,průběžný vážený průměr
+2022-12-09,Zima,0.77,0.2,,Zima,průběžný vážený průměr
+2022-12-09,Diviš,0.31,0.2,,Diviš,průběžný vážený průměr
+2022-12-02,Pavel,24.38,0.2,,Pavel,průběžný vážený průměr
+2022-12-02,Babiš,27.97,0.2,,Babiš,průběžný vážený průměr
+2022-12-02,Nerudová,24.91,0.2,,Nerudová,průběžný vážený průměr
+2022-12-02,Fischer,6.11,0.2,,Fischer,průběžný vážený průměr
+2022-12-02,Středula,3.84,0.2,,Středula,průběžný vážený průměr
+2022-12-02,Hilšer,4.4,0.2,,Hilšer,průběžný vážený průměr
+2022-12-02,Bašta,1.72,0.2,,Bašta,průběžný vážený průměr
+2022-12-02,Zima,0.73,0.2,,Zima,průběžný vážený průměr
+2022-12-02,Diviš,0.28,0.2,,Diviš,průběžný vážený průměr
+2022-11-25,Pavel,24.58,0.2,,Pavel,průběžný vážený průměr
+2022-11-25,Babiš,27.55,0.2,,Babiš,průběžný vážený průměr
+2022-11-25,Nerudová,24.64,0.2,,Nerudová,průběžný vážený průměr
+2022-11-25,Fischer,6.08,0.2,,Fischer,průběžný vážený průměr
+2022-11-25,Středula,3.86,0.2,,Středula,průběžný vážený průměr
+2022-11-25,Hilšer,4.29,0.2,,Hilšer,průběžný vážený průměr
+2022-11-25,Bašta,1.45,0.2,,Bašta,průběžný vážený průměr
+2022-11-25,Zima,0.58,0.2,,Zima,průběžný vážený průměr
+2022-11-25,Diviš,0.18,0.2,,Diviš,průběžný vážený průměr
+2022-11-18,Pavel,24.76,0.2,,Pavel,průběžný vážený průměr
+2022-11-18,Babiš,27.0,0.2,,Babiš,průběžný vážený průměr
+2022-11-18,Nerudová,23.9,0.2,,Nerudová,průběžný vážený průměr
+2022-11-18,Fischer,6.1,0.2,,Fischer,průběžný vážený průměr
+2022-11-18,Středula,4.03,0.2,,Středula,průběžný vážený průměr
+2022-11-18,Hilšer,4.32,0.2,,Hilšer,průběžný vážený průměr
+2022-11-18,Bašta,1.1,0.2,,Bašta,průběžný vážený průměr
+2022-11-18,Zima,0.44,0.2,,Zima,průběžný vážený průměr
+2022-11-18,Diviš,0.15,0.2,,Diviš,průběžný vážený průměr
+2022-11-11,Pavel,24.72,0.2,,Pavel,průběžný vážený průměr
+2022-11-11,Babiš,26.33,0.2,,Babiš,průběžný vážený průměr
+2022-11-11,Nerudová,22.79,0.2,,Nerudová,průběžný vážený průměr
+2022-11-11,Fischer,6.29,0.2,,Fischer,průběžný vážený průměr
+2022-11-11,Středula,4.29,0.2,,Středula,průběžný vážený průměr
+2022-11-11,Hilšer,4.47,0.2,,Hilšer,průběžný vážený průměr
+2022-11-11,Bašta,0.97,0.2,,Bašta,průběžný vážený průměr
+2022-11-11,Zima,0.39,0.2,,Zima,průběžný vážený průměr
+2022-11-11,Diviš,0.16,0.2,,Diviš,průběžný vážený průměr
+2022-11-04,Pavel,24.65,0.2,,Pavel,průběžný vážený průměr
+2022-11-04,Babiš,25.42,0.2,,Babiš,průběžný vážený průměr
+2022-11-04,Nerudová,21.28,0.2,,Nerudová,průběžný vážený průměr
+2022-11-04,Fischer,6.54,0.2,,Fischer,průběžný vážený průměr
+2022-11-04,Středula,4.65,0.2,,Středula,průběžný vážený průměr
+2022-11-04,Hilšer,4.68,0.2,,Hilšer,průběžný vážený průměr
+2022-11-04,Bašta,0.78,0.2,,Bašta,průběžný vážený průměr
+2022-11-04,Zima,0.31,0.2,,Zima,průběžný vážený průměr
+2022-11-04,Diviš,0.17,0.2,,Diviš,průběžný vážený průměr
+2022-10-28,Pavel,24.57,0.2,,Pavel,průběžný vážený průměr
+2022-10-28,Babiš,24.39,0.2,,Babiš,průběžný vážený průměr
+2022-10-28,Nerudová,19.57,0.2,,Nerudová,průběžný vážený průměr
+2022-10-28,Fischer,6.83,0.2,,Fischer,průběžný vážený průměr
+2022-10-28,Středula,5.06,0.2,,Středula,průběžný vážený průměr
+2022-10-28,Hilšer,4.91,0.2,,Hilšer,průběžný vážený průměr
+2022-10-28,Bašta,0.57,0.2,,Bašta,průběžný vážený průměr
+2022-10-28,Zima,0.23,0.2,,Zima,průběžný vážený průměr
+2022-10-28,Diviš,0.17,0.2,,Diviš,průběžný vážený průměr
+2022-10-21,Pavel,24.51,0.2,,Pavel,průběžný vážený průměr
+2022-10-21,Babiš,23.44,0.2,,Babiš,průběžný vážený průměr
+2022-10-21,Nerudová,17.99,0.2,,Nerudová,průběžný vážený průměr
+2022-10-21,Fischer,7.09,0.2,,Fischer,průběžný vážený průměr
+2022-10-21,Středula,5.43,0.2,,Středula,průběžný vážený průměr
 2022-10-21,Hilšer,5.13,0.2,,Hilšer,průběžný vážený průměr
-2022-10-21,Bašta,0.25,0.2,,Bašta,průběžný vážený průměr
-2022-10-21,Rohanová,0.15,0.2,,Rohanová,průběžný vážený průměr
-2022-10-21,Zima,0.08,0.2,,Zima,průběžný vážený průměr
-2022-10-14,Pavel,24.62,0.2,,Pavel,průběžný vážený průměr
-2022-10-14,Babiš,22.52,0.2,,Babiš,průběžný vážený průměr
-2022-10-14,Nerudová,16.57,0.2,,Nerudová,průběžný vážený průměr
-2022-10-14,Fischer,7.32,0.2,,Fischer,průběžný vážený průměr
-2022-10-14,Středula,5.7,0.2,,Středula,průběžný vážený průměr
-2022-10-14,Hilšer,5.35,0.2,,Hilšer,průběžný vážený průměr
-2022-10-14,Bašta,0.16,0.2,,Bašta,průběžný vážený průměr
-2022-10-14,Rohanová,0.09,0.2,,Rohanová,průběžný vážený průměr
-2022-10-14,Zima,0.05,0.2,,Zima,průběžný vážený průměr
-2022-10-07,Pavel,24.73,0.2,,Pavel,průběžný vážený průměr
-2022-10-07,Babiš,22.02,0.2,,Babiš,průběžný vážený průměr
-2022-10-07,Nerudová,15.92,0.2,,Nerudová,průběžný vážený průměr
-2022-10-07,Fischer,7.45,0.2,,Fischer,průběžný vážený průměr
-2022-10-07,Středula,5.74,0.2,,Středula,průběžný vážený průměr
-2022-10-07,Hilšer,5.57,0.2,,Hilšer,průběžný vážený průměr
-2022-10-07,Bašta,0.12,0.2,,Bašta,průběžný vážený průměr
-2022-10-07,Rohanová,0.07,0.2,,Rohanová,průběžný vážený průměr
-2022-10-07,Zima,0.04,0.2,,Zima,průběžný vážený průměr
-2022-09-30,Pavel,24.38,0.2,,Pavel,průběžný vážený průměr
-2022-09-30,Babiš,21.32,0.2,,Babiš,průběžný vážený průměr
-2022-09-30,Nerudová,15.1,0.2,,Nerudová,průběžný vážený průměr
-2022-09-30,Fischer,7.59,0.2,,Fischer,průběžný vážený průměr
-2022-09-30,Středula,5.93,0.2,,Středula,průběžný vážený průměr
+2022-10-21,Bašta,0.38,0.2,,Bašta,průběžný vážený průměr
+2022-10-21,Zima,0.15,0.2,,Zima,průběžný vážený průměr
+2022-10-21,Diviš,0.18,0.2,,Diviš,průběžný vážený průměr
+2022-10-14,Pavel,24.57,0.2,,Pavel,průběžný vážený průměr
+2022-10-14,Babiš,22.75,0.2,,Babiš,průběžný vážený průměr
+2022-10-14,Nerudová,16.88,0.2,,Nerudová,průběžný vážený průměr
+2022-10-14,Fischer,7.29,0.2,,Fischer,průběžný vážený průměr
+2022-10-14,Středula,5.64,0.2,,Středula,průběžný vážený průměr
+2022-10-14,Hilšer,5.34,0.2,,Hilšer,průběžný vážený průměr
+2022-10-14,Bašta,0.24,0.2,,Bašta,průběžný vážený průměr
+2022-10-14,Zima,0.1,0.2,,Zima,průběžný vážený průměr
+2022-10-14,Diviš,0.2,0.2,,Diviš,průběžný vážený průměr
+2022-10-07,Pavel,24.69,0.2,,Pavel,průběžný vážený průměr
+2022-10-07,Babiš,22.2,0.2,,Babiš,průběžný vážený průměr
+2022-10-07,Nerudová,16.16,0.2,,Nerudová,průběžný vážený průměr
+2022-10-07,Fischer,7.42,0.2,,Fischer,průběžný vážený průměr
+2022-10-07,Středula,5.7,0.2,,Středula,průběžný vážený průměr
+2022-10-07,Hilšer,5.56,0.2,,Hilšer,průběžný vážený průměr
+2022-10-07,Bašta,0.18,0.2,,Bašta,průběžný vážený průměr
+2022-10-07,Zima,0.07,0.2,,Zima,průběžný vážený průměr
+2022-10-07,Diviš,0.26,0.2,,Diviš,průběžný vážený průměr
+2022-09-30,Pavel,24.36,0.2,,Pavel,průběžný vážený průměr
+2022-09-30,Babiš,21.46,0.2,,Babiš,průběžný vážený průměr
+2022-09-30,Nerudová,15.3,0.2,,Nerudová,průběžný vážený průměr
+2022-09-30,Fischer,7.56,0.2,,Fischer,průběžný vážený průměr
+2022-09-30,Středula,5.89,0.2,,Středula,průběžný vážený průměr
 2022-09-30,Hilšer,5.63,0.2,,Hilšer,průběžný vážený průměr
-2022-09-30,Bašta,0.09,0.2,,Bašta,průběžný vážený průměr
-2022-09-30,Rohanová,0.05,0.2,,Rohanová,průběžný vážený průměr
-2022-09-30,Zima,0.03,0.2,,Zima,průběžný vážený průměr
-2022-09-23,Pavel,24.33,0.2,,Pavel,průběžný vážený průměr
-2022-09-23,Babiš,21.62,0.2,,Babiš,průběžný vážený průměr
-2022-09-23,Nerudová,14.4,0.2,,Nerudová,průběžný vážený průměr
-2022-09-23,Fischer,7.64,0.2,,Fischer,průběžný vážený průměr
-2022-09-23,Středula,6.15,0.2,,Středula,průběžný vážený průměr
-2022-09-23,Hilšer,5.62,0.2,,Hilšer,průběžný vážený průměr
-2022-09-23,Bašta,0.08,0.2,,Bašta,průběžný vážený průměr
-2022-09-23,Rohanová,0.04,0.2,,Rohanová,průběžný vážený průměr
-2022-09-23,Zima,0.03,0.2,,Zima,průběžný vážený průměr
-2022-09-16,Pavel,24.26,0.2,,Pavel,průběžný vážený průměr
-2022-09-16,Babiš,22.01,0.2,,Babiš,průběžný vážený průměr
-2022-09-16,Nerudová,13.48,0.2,,Nerudová,průběžný vážený průměr
-2022-09-16,Fischer,7.72,0.2,,Fischer,průběžný vážený průměr
-2022-09-16,Středula,6.43,0.2,,Středula,průběžný vážený průměr
+2022-09-30,Bašta,0.13,0.2,,Bašta,průběžný vážený průměr
+2022-09-30,Zima,0.05,0.2,,Zima,průběžný vážený průměr
+2022-09-30,Diviš,0.36,0.2,,Diviš,průběžný vážený průměr
+2022-09-23,Pavel,24.31,0.2,,Pavel,průběžný vážený průměr
+2022-09-23,Babiš,21.74,0.2,,Babiš,průběžný vážený průměr
+2022-09-23,Nerudová,14.57,0.2,,Nerudová,průběžný vážený průměr
+2022-09-23,Fischer,7.62,0.2,,Fischer,průběžný vážený průměr
+2022-09-23,Středula,6.11,0.2,,Středula,průběžný vážený průměr
+2022-09-23,Hilšer,5.61,0.2,,Hilšer,průběžný vážený průměr
+2022-09-23,Bašta,0.12,0.2,,Bašta,průběžný vážený průměr
+2022-09-23,Zima,0.05,0.2,,Zima,průběžný vážený průměr
+2022-09-23,Diviš,0.31,0.2,,Diviš,průběžný vážený průměr
+2022-09-16,Pavel,24.25,0.2,,Pavel,průběžný vážený průměr
+2022-09-16,Babiš,22.11,0.2,,Babiš,průběžný vážený průměr
+2022-09-16,Nerudová,13.63,0.2,,Nerudová,průběžný vážený průměr
+2022-09-16,Fischer,7.7,0.2,,Fischer,průběžný vážený průměr
+2022-09-16,Středula,6.4,0.2,,Středula,průběžný vážený průměr
 2022-09-16,Hilšer,5.59,0.2,,Hilšer,průběžný vážený průměr
-2022-09-16,Bašta,0.06,0.2,,Bašta,průběžný vážený průměr
-2022-09-16,Rohanová,0.03,0.2,,Rohanová,průběžný vážený průměr
-2022-09-16,Zima,0.02,0.2,,Zima,průběžný vážený průměr
-2022-09-09,Pavel,24.25,0.2,,Pavel,průběžný vážený průměr
-2022-09-09,Babiš,22.04,0.2,,Babiš,průběžný vážený průměr
-2022-09-09,Nerudová,13.4,0.2,,Nerudová,průběžný vážený průměr
-2022-09-09,Fischer,7.72,0.2,,Fischer,průběžný vážený průměr
-2022-09-09,Středula,6.45,0.2,,Středula,průběžný vážený průměr
-2022-09-09,Hilšer,5.59,0.2,,Hilšer,průběžný vážený průměr
-2022-09-09,Bašta,0.06,0.2,,Bašta,průběžný vážený průměr
-2022-09-09,Rohanová,0.03,0.2,,Rohanová,průběžný vážený průměr
-2022-09-09,Zima,0.02,0.2,,Zima,průběžný vážený průměr
-2022-09-02,Pavel,24.25,0.2,,Pavel,průběžný vážený průměr
-2022-09-02,Babiš,22.04,0.2,,Babiš,průběžný vážený průměr
-2022-09-02,Nerudová,13.4,0.2,,Nerudová,průběžný vážený průměr
-2022-09-02,Fischer,7.72,0.2,,Fischer,průběžný vážený průměr
-2022-09-02,Středula,6.45,0.2,,Středula,průběžný vážený průměr
-2022-09-02,Hilšer,5.59,0.2,,Hilšer,průběžný vážený průměr
-2022-09-02,Bašta,0.06,0.2,,Bašta,průběžný vážený průměr
-2022-09-02,Rohanová,0.03,0.2,,Rohanová,průběžný vážený průměr
-2022-09-02,Zima,0.02,0.2,,Zima,průběžný vážený průměr
+2022-09-16,Bašta,0.09,0.2,,Bašta,průběžný vážený průměr
+2022-09-16,Zima,0.04,0.2,,Zima,průběžný vážený průměr
+2022-09-16,Diviš,0.24,0.2,,Diviš,průběžný vážený průměr
+2022-09-09,Pavel,24.24,0.2,,Pavel,průběžný vážený průměr
+2022-09-09,Babiš,22.13,0.2,,Babiš,průběžný vážený průměr
+2022-09-09,Nerudová,13.55,0.2,,Nerudová,průběžný vážený průměr
+2022-09-09,Fischer,7.71,0.2,,Fischer,průběžný vážený průměr
+2022-09-09,Středula,6.42,0.2,,Středula,průběžný vážený průměr
+2022-09-09,Hilšer,5.58,0.2,,Hilšer,průběžný vážený průměr
+2022-09-09,Bašta,0.09,0.2,,Bašta,průběžný vážený průměr
+2022-09-09,Zima,0.04,0.2,,Zima,průběžný vážený průměr
+2022-09-09,Diviš,0.24,0.2,,Diviš,průběžný vážený průměr
+2022-09-02,Pavel,24.24,0.2,,Pavel,průběžný vážený průměr
+2022-09-02,Babiš,22.13,0.2,,Babiš,průběžný vážený průměr
+2022-09-02,Nerudová,13.55,0.2,,Nerudová,průběžný vážený průměr
+2022-09-02,Fischer,7.71,0.2,,Fischer,průběžný vážený průměr
+2022-09-02,Středula,6.42,0.2,,Středula,průběžný vážený průměr
+2022-09-02,Hilšer,5.58,0.2,,Hilšer,průběžný vážený průměr
+2022-09-02,Bašta,0.09,0.2,,Bašta,průběžný vážený průměr
+2022-09-02,Zima,0.04,0.2,,Zima,průběžný vážený průměr
+2022-09-02,Diviš,0.24,0.2,,Diviš,průběžný vážený průměr
