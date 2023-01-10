@@ -27,8 +27,9 @@ t.to_json(app_path + "president/president_2_polls_table.json", orient='records')
 #
 selected = [
   ['Petr Pavel', 'Andrej Babiš'],
-  ['Danuše Nerudová', 'Andrej Babiš']
-] 
+  ['Danuše Nerudová', 'Andrej Babiš'],
+  ['Petr Pavel', 'Danuše Nerudová']
+]
 since = '2022-09-01'
 election_date = '2023-01-13'
 ts = t[t['middle_date'] >= since].sort_values('middle_date')
