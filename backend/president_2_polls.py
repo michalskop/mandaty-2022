@@ -31,7 +31,7 @@ selected = [
   ['Petr Pavel', 'Danuše Nerudová']
 ]
 since = '2022-09-01'
-election_date = '2023-01-13'
+election_date = '2023-01-28'
 ts = t[t['middle_date'] >= since].sort_values('middle_date')
 
 races = []
@@ -50,7 +50,7 @@ for s in selected:
 out = []
 for race in races:
   mas = pd.DataFrame()
-  for dte in range(0, 135, 7):
+  for dte in range(0, 149, 7):
     weights = (1 / 2) ** (abs(race['days_to_elections'] - dte) / 15)
     moving_average = race.loc[:, 'p'].mul(weights, axis=0).sum() / weights.sum()
     item = {'days to elections': dte, 'p': moving_average}
