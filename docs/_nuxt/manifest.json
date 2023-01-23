@@ -1,6 +1,6 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-2ff50fb5.mjs",
+    "file": "entry-f3833591.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -24,7 +24,7 @@
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-1ce40f79.mjs",
+    "file": "archiv-508a8531.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-dea233e1.mjs",
+    "file": "fest-65c93700.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -40,31 +40,31 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-9a55f9cb.mjs",
+    "file": "index-a49e502d.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DecNumber-b8798248.mjs",
+      "_DecNumber-969ab264.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_DecNumber-b8798248.mjs": {
-    "file": "DecNumber-b8798248.mjs",
+  "_DecNumber-969ab264.mjs": {
+    "file": "DecNumber-969ab264.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/snemovna.vue": {
-    "file": "snemovna-ff94ed12.mjs",
+    "file": "snemovna-bee1e978.mjs",
     "src": "pages/snemovna.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DecNumber-b8798248.mjs",
+      "_DecNumber-969ab264.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/test.vue": {
-    "file": "test-8f29f44c.mjs",
+    "file": "test-1ab972be.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -72,7 +72,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-c2276892.mjs",
+    "file": "custom-314bf507.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
