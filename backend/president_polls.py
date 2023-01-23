@@ -41,7 +41,7 @@ names.to_json(app_path + "president/president_polls_table_candidates.json", orie
 
 ## Flourish
 # https://app.flourish.studio/visualisation/11824842/edit
-election_date = '2023-01-13'
+election_date = '2023-01-28'
 sheetkey = "1jQYnndcOqY_zkY6VXpY-8HcNUUcRDF54Kn4QYetYX4k"
 sheetname = "2023-1"
 election_day = datetime.datetime.fromisoformat(election_date)
