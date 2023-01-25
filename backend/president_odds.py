@@ -13,7 +13,7 @@ assets_path = "frontend/assets/"
 public_path = "frontend/public/shares/"
 flourish_path = "backend/data/"
 
-election_date = '2023-01-13'
+election_date = '2023-01-28'
 
 df = pd.read_csv(url)
 
