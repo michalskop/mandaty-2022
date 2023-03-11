@@ -1,6 +1,6 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-b53d8280.mjs",
+    "file": "entry-747fd722.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -15,16 +15,16 @@
       "entry.35de1482.css"
     ],
     "assets": [
-      "president_thumbnail.c7a8c29d.svg",
+      "president_thumbnail.8c82a88c.svg",
       "psp_thumbnail.e5f899b1.svg",
-      "president_odds_history.3692ba9d.svg",
-      "president_odds_history_small.36a6e795.svg",
+      "president_odds_history.d10e5312.svg",
+      "president_odds_history_small.90504656.svg",
       "psp_polls_history.45ec92eb.svg",
       "psp_polls_history_small.261ab1c2.svg"
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-162689c2.mjs",
+    "file": "archiv-113fbbbe.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-999fa34d.mjs",
+    "file": "fest-7ae3c6db.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -40,31 +40,31 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-55214cb2.mjs",
+    "file": "index-70d1ecce.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DecNumber-85a9ee09.mjs",
+      "_DecNumber-ec10cad9.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_DecNumber-85a9ee09.mjs": {
-    "file": "DecNumber-85a9ee09.mjs",
+  "_DecNumber-ec10cad9.mjs": {
+    "file": "DecNumber-ec10cad9.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/snemovna.vue": {
-    "file": "snemovna-d305bf88.mjs",
+    "file": "snemovna-bb3426c7.mjs",
     "src": "pages/snemovna.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DecNumber-85a9ee09.mjs",
+      "_DecNumber-ec10cad9.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/test.vue": {
-    "file": "test-321c0aaf.mjs",
+    "file": "test-d24f6c90.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -72,7 +72,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-cddb1f4d.mjs",
+    "file": "custom-ca08f558.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
