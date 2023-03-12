@@ -1,29 +1,25 @@
 <template>
   <div class="container">
-
-    <ChartLinks />
-  
-    <h1 class="pt-4">Prezidentské volby 2023</h1>
     
-    <hr />
+    <ChartLinks />
 
-    <PresidentCurrentOdds />
-
-    <!-- <PresidentBetTipsport /> -->
+    <h1 class="pt-4">Sněmovna 2021-2025</h1>
 
     <hr />
 
-    <PresidentOddsChart />
-
-    <!-- <PresidentBetTipsport /> -->
+    <SnemovnaPollsSeats />
 
     <hr />
 
-    <President2Table />
+    <SnemovnaPollsChart />
 
     <hr />
 
-    <PresidentTable />
+    <SnemovnaPollsPartiesTables />
+
+    <hr />
+
+    <SnemovnaPollsCoalitionsTables />
 
   </div>
 </template>

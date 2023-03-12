@@ -3,12 +3,6 @@
     <div class="row justify-content-center pt-2">
       <div class="col-md-4">
         <NuxtLink to="/">
-          <img src="~/assets/image/president_thumbnail.svg" class="image" />
-          <span class="text-image">Prezidentské volby 2023</span>
-        </NuxtLink>
-      </div>
-      <div class="col-md-4">
-        <NuxtLink to="/snemovna">
           <img src="~/assets/image/psp_thumbnail.svg" class="image" />
           <span class="text-image">Sněmovna 2021-2025</span>
         </NuxtLink>
