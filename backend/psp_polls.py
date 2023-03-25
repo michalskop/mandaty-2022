@@ -203,11 +203,33 @@ mu.sort_values([mu.index.max()], ascending=False, axis=1, inplace=True)
 mu.sort_index(inplace=True)
 allvalues.index = middle_dates
 allvalues.sort_index(inplace=True)
+middle_dates = allvalues.index.tolist()
+
 # lo + hi: 
 lo = binom.ppf(0.05, sample_n, mu) / sample_n
 hi = binom.ppf(0.95, sample_n, mu) / sample_n
 lo = coef * lo - mu  # lo + (lo - mu)
 hi = coef * hi - mu  # hi + (hi - mu)
+
+# interactive Plotly chart data
+dataPlotly = {
+  'mu': {},
+  'lo': {},
+  'hi': {},
+  'allvalues': {},
+  'middle_dates': middle_dates,
+  'choices': choices.fillna(0).to_dict(orient='records'),
+  'election_date': election_date
+}
+
+for name in mu:
+  dataPlotly['mu'][name] = mu[name].replace(np.nan, None).tolist()
+  dataPlotly['lo'][name] = lo[name].replace(np.nan, None).tolist()
+  dataPlotly['hi'][name] = hi[name].replace(np.nan, None).tolist()
+  dataPlotly['allvalues'][name] = allvalues[name].replace(np.nan, None).tolist()
+
+with open(assets_path + "data/psp/data.json", "w") as fout:
+  json.dump(dataPlotly, fout, ensure_ascii=False)
 
 def _html2rgba(html, a):
   html = html.strip().strip('#')

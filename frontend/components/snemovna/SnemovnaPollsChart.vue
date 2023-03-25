@@ -5,32 +5,37 @@
       <small>dle průzkumů veřejného mínění
       </small>
     </h3>
-    <img src="~/assets/image/psp_polls_history.svg" class="image" />
-    <img src="~/assets/image/psp_polls_history_small.svg" class="image-small" />
+    <div v-if="isMobile">
+      <SnemovnaPollsPictureChart />
+    </div>
+    <div v-if="!isMobile">
+      <SnemovnaPollsInteractiveChart />
+    </div>
   </div>
 </template>
 
+<script>
+
+export default {
+  name: 'SnemovnaPollsChart',
+  data() {
+    return {
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.isMobile = window.innerWidth < 666
+    console.log('isMobile:', this.isMobile)
+  },
+  components: {
+    SnemovnaPollsPictureChart: () => import('~/components/snemovna/SnemovnaPollsPictureChart.vue'),
+    SnemovnaPollsInteractiveChart: () => import('~/components/snemovna/SnemovnaPollsInteractiveChart.vue')
+  }
+}
+</script>
+
 <style scoped>
-.image-wrapper {
-  min-height: 50vh;
+#image-wrapper {
+  min-height: 40vh;
 }
-.image {
-  /* min-width: 100%; */
-  width: 100%;
-  display: none;
-}
-.image-small {
-  width: 100%;
-  display: block;
-}
-
-@media (min-width: 666px) {
-  .image-small {
-    display: none;
-  }
-  .image {
-    display: block;
-  }
-}
-
 </style>
