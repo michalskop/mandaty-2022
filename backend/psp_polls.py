@@ -436,7 +436,7 @@ with open(assets_path + "data/psp/psp_share_image.json", "w") as fout:
   }
   json.dump(dd, fout)
 
-# fig.write_image(path + "psp_test.png")
+fig.write_image(filename)
 
 
 # FLOURISH
