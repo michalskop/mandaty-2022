@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/bin/node /home/michal/.yarn/bin/yarn.js add plotly-js
+
+PATH: 
+  /home/michal/.yarn/bin:/home/michal/.config/yarn/global/node_modules/.bin:/home/michal/gems/bin:/home/michal/dev/anaconda3/bin:/home/michal/dev/anaconda3/condabin:/home/michal/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  18.0.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/plotly-js: Not found
+      at params.callback [as _callback] (/home/michal/.yarn/lib/cli.js:66138:18)
+      at self.callback (/home/michal/.yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/home/michal/.yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (/home/michal/.yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1344:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
