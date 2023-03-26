@@ -85,7 +85,7 @@ export default {
     font-weight: 700;
     line-height: 1.1;
     color: #000;
-    font-size: 3.75em;
+    font-size: 3.4em;
   }
   .difference {
     /* float: right; */

@@ -122,7 +122,6 @@ export default defineComponent({
     }
 
     const getColor = (name, data) => {
-      console.log(data)
       try {
         return data.choices.find(c => c.id === name).color
       } catch {
