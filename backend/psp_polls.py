@@ -28,7 +28,7 @@ include_limit = 0.03
 
 sample_n = 777  # basic sample size
 
-runs = 100
+runs = 1000  # number of runs
 
 coef = 2 # coefficient * sd (other error)
 
