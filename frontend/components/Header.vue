@@ -8,8 +8,10 @@
             ...
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu">
-            <li><button class="dropdown-item" type="button"><NuxtLink to="/">Sněmovna 2021-2025</NuxtLink></button></li>
-            <li><button class="dropdown-item" type="button"><NuxtLink to="/archiv">Archiv</NuxtLink></button></li>
+            <li><button class="dropdown-item" type="button">🏛️ <NuxtLink to="/">Sněmovna 2021-2025</NuxtLink></button></li>
+            <li><button class="dropdown-item" type="button">🗄️ <NuxtLink to="/archiv">Archiv</NuxtLink></button></li>
+            <li><hr/></li>
+            <li><button class="dropdown-item" type="button">🇸🇰 <a href="https://mandaty.sk/">Mandáty.sk</a></button></li>
           </ul>
         </div>
       </div>
