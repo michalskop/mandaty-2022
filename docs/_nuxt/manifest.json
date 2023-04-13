@@ -1,11 +1,11 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-de36504d.mjs",
+    "file": "entry-c27dafd4.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "isDynamicEntry": true,
     "dynamicImports": [
-      "_plotly-004cdd81.mjs",
+      "_plotly-1d218296.mjs",
       "assets/data/psp/data.json",
       "pages/archiv.vue",
       "pages/fest.vue",
@@ -25,7 +25,7 @@
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-ab27d642.mjs",
+    "file": "archiv-6f863133.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -33,7 +33,7 @@
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-36c5c41f.mjs",
+    "file": "fest-f09a68d6.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -41,34 +41,34 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-b6fc552c.mjs",
+    "file": "index-1a1cd5ee.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DecNumber-18c20b98.mjs",
+      "_DecNumber-cc86e723.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ],
     "dynamicImports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_DecNumber-18c20b98.mjs": {
-    "file": "DecNumber-18c20b98.mjs",
+  "_DecNumber-cc86e723.mjs": {
+    "file": "DecNumber-cc86e723.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/president-2023.vue": {
-    "file": "president-2023-9aecb8be.mjs",
+    "file": "president-2023-2eb1faae.mjs",
     "src": "pages/president-2023.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DecNumber-18c20b98.mjs",
+      "_DecNumber-cc86e723.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/test.vue": {
-    "file": "test-a07dbe09.mjs",
+    "file": "test-1dd365a2.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -76,7 +76,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-4a059331.mjs",
+    "file": "custom-17114e1f.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -86,8 +86,8 @@
       "custom.067cef2e.css"
     ]
   },
-  "_plotly-004cdd81.mjs": {
-    "file": "plotly-004cdd81.mjs",
+  "_plotly-1d218296.mjs": {
+    "file": "plotly-1d218296.mjs",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
