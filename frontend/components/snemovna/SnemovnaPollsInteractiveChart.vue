@@ -94,7 +94,8 @@ export default defineComponent({
         },
         yaxis: { tickformat: ',.0%' },
         autosize: false,
-        width: 1200,
+        // width: 1200,
+        width: Math.min(window.innerWidth - 200, 1200),
         height: 600,
         margin: {
           l: 50,
