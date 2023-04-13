@@ -25,6 +25,8 @@ choices = pd.read_csv(choices_url)
 others = 'jiné strany'
 
 include_limit = 0.03
+include_current3_limit = 0.02
+include_election_limit = 0.05
 
 sample_n = 777  # basic sample size
 
@@ -57,30 +59,51 @@ allvalues = allvalues.drop(others, axis=1)
 
 # find max values
 maxvalues = allvalues.max(axis=0)
-selected_parties = maxvalues[maxvalues > include_limit].index
+maxvalueselection = allvalues.iloc[0, :]
+if len(allvalues) >= 3:
+  maxvalues3 = allvalues.iloc[-3:-1, :].max(axis=0)
+selected_parties = maxvalues[((maxvalues > include_limit) & (maxvalues3 > include_current3_limit)) | (maxvalueselection >= include_election_limit)].index
 selected_values = allvalues[selected_parties]
 
 # correlations
 corr = allvalues.loc[:, selected_parties].corr()
+corr = corr.fillna(0)
 
 # mu, sigma
 # dates distance matrix
 d = source1.loc[:, ['middle_date']].apply(lambda x: pd.to_datetime(x))
 dd = pd.DataFrame((d - d.min()).loc[:, 'middle_date'].dt.days)
 distances = pd.DataFrame(distance.cdist(dd, dd), index=d.loc[:, 'middle_date'], columns=d.loc[:, 'middle_date'])
-distances.drop_duplicates(inplace=True)
-distances.T.drop_duplicates(inplace=True)
+# distances.drop_duplicates(inplace=True)
+# distances.T.drop_duplicates(inplace=True)
 # weight matrix
 # w = pow(distances, 1/30) * 30
 w = 1 / np.exp(distances / 30)
 ws = w.sum(axis=1)
 # weighted values - mu
 # replacing missing values with 0
-mu = np.matmul(w, selected_values.fillna(0)).divide(np.asarray(ws), axis=0)
-mu.columns = selected_parties
-mun = mu * sample_n
+mu1 = np.matmul(w, selected_values.fillna(0)).divide(np.asarray(ws), axis=0)
+mu1.columns = selected_parties
+selected_values.index = mu1.index
+V_zero = selected_values.fillna(0)
+# V_zero.index = selected_values.index
+row_sums = w.dot(V_zero.notna().values.astype(int))
+row_sums.columns = V_zero.columns
+Z = np.matmul(w, V_zero)
+Z.columns = V_zero.columns
+mu = Z / row_sums
+mu.columns = selected_values.columns
+mu.index = selected_values.index
+mu = mu.where(~selected_values.isna(), np.nan)
+mu.index = selected_values.index
+
+# replace first value with election value
+mu.iloc[0, :] = selected_values.iloc[0, :]
+
+mun = mu1 * sample_n
+mun.columns = selected_parties
 # sigma
-sigman = np.sqrt(mu * (1 - mu) * sample_n)
+sigman = np.sqrt(mu1 * (1 - mu1) * sample_n)
 
 
 # Imperiali
@@ -116,7 +139,8 @@ def imperiali(sample):
         overs['rest'][i] = overs['estimated_votes'][i] - overs['nof_seats'][i] * N
 
 
-    regional_seats = regional_seats.append(overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']], ignore_index=True)
+    # regional_seats = regional_seats.append(overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']], ignore_index=True)
+    regional_seats = pd.concat([regional_seats, overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']]], ignore_index=True)
 
   # 2nd scrutinium
   ss = 200 - regional_seats['nof_seats'].sum()
@@ -161,7 +185,7 @@ estimates = pd.DataFrame(columns=selected_parties)
 for i in range(runs):
   sample = samples.iloc[i].reset_index()
   sample.columns = ['party', 'value']
-  estimates = estimates.append(imperiali(sample), ignore_index=True)
+  estimates = pd.concat([estimates, imperiali(sample)], ignore_index=True)
 
 estimates = estimates.fillna(0)
 
