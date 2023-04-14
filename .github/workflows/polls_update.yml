@@ -1,9 +1,9 @@
 name: Update all polls
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
   # schedule:
   #   - cron: '10 4,16 * * *'
