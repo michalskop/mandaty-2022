@@ -82,14 +82,14 @@ w = 1 / np.exp(distances / 30)
 ws = w.sum(axis=1)
 # weighted values - mu
 # replacing missing values with 0
-mu1 = np.matmul(w, selected_values.fillna(0)).divide(np.asarray(ws), axis=0)
+mu1 = pd.DataFrame(np.matmul(np.matrix(w), np.matrix(selected_values.fillna(0)))).divide(np.asarray(ws), axis=0)
 mu1.columns = selected_parties
 selected_values.index = mu1.index
 V_zero = selected_values.fillna(0)
 # V_zero.index = selected_values.index
 row_sums = w.dot(V_zero.notna().values.astype(int))
 row_sums.columns = V_zero.columns
-Z = np.matmul(w, V_zero)
+Z = np.matmul(np.matrix(w), np.matrix(V_zero))
 Z.columns = V_zero.columns
 mu = Z / row_sums
 mu.columns = selected_values.columns
