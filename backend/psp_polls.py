@@ -84,6 +84,7 @@ ws = w.sum(axis=1)
 # replacing missing values with 0
 mu1 = pd.DataFrame(np.matmul(np.matrix(w), np.matrix(selected_values.fillna(0)))).divide(np.asarray(ws), axis=0)
 mu1.columns = selected_parties
+mu1.index = w.index
 selected_values.index = mu1.index
 V_zero = selected_values.fillna(0)
 # V_zero.index = selected_values.index
@@ -292,7 +293,7 @@ for name in mu:
     y=mu[name],
     mode='lines',
     line_shape='spline',
-    name=name + ": " + str(round(mu[name][-1] * 100)) + '%',
+    name=name + ": " + str(round(mu[name][len(mu) - 1] * 100)) + '%',
     line=dict(
       width=7,
       color=color
@@ -355,7 +356,7 @@ for name in mu.iloc[:, 0:5]:
       y=mu[name],
       mode='lines',
       line_shape='spline',
-      name=name + ": " + str(round(mu[name][-1] * 100)) + '%',
+      name=name + ": " + str(round(mu[name][len(mu) - 1] * 100)) + '%',
       line=dict(
         width=5,
         color=color
@@ -403,7 +404,7 @@ for name in mu.iloc[:, 0:5]:
       y=mu[name],
       mode='lines',
       line_shape='spline',
-      name=name + ": " + str(round(mu[name][-1] * 100)) + '%',
+      name=name + ": " + str(round(mu[name][len(mu) - 1] * 100)) + '%',
       line=dict(
         width=5,
         color=color
