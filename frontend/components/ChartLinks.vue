@@ -7,6 +7,12 @@
           <span class="text-image">Sněmovna 2021-2025</span>
         </NuxtLink>
       </div>
+      <div class="col-md-4">
+        <NuxtLink to="/president-2028">
+          <img src="~/assets/image/president2028_thumbnail.svg" class="image" />
+          <span class="text-image">Prezidentské volby 2028</span>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>

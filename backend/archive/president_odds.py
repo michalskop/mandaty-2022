@@ -7,27 +7,35 @@ import plotly.graph_objects as go
 import numpy as np
 import re
 
-url = "https://raw.githubusercontent.com/michalskop/ifortuna.cz/master/daily/MCZ41359.csv"
+url = "https://raw.githubusercontent.com/michalskop/tipsport.cz/main/2022/daily/b1013277721.csv"
 
 assets_path = "frontend/assets/"
 public_path = "frontend/public/shares/"
 flourish_path = "backend/data/"
 
-election_date = '2028-01-28'
+election_date = '2023-01-28'
 
 df = pd.read_csv(url)
 
-# remove 'muž' and 'žena' from names
-del df['muž']
-del df['žena']
+# remove additional text in '()'
+nice_columns = []
+for c in df.columns:
+  nc = c
+  ar = re.findall('\(.{1,}\)', c)
+  for a in ar:
+    nc = nc.replace(a, '')
+  nc = nc.strip()
+  nice_columns.append(nc)
+df.columns = nice_columns
 
-# calculate probabilities, cut-off all with odds > 1/sum(odd) (100, but adjusted for company's margin)
-limit = 100
+
+
+# calculate probabilities, cut-off all with odds > 1/sum(odd) (100, but adjusted for Tipsport's margin)
 current_data = df.iloc[-1, 1:].T.to_frame().reset_index()
 current_data.columns = ['name', 'odd']
 
 current_data_1_psum = (1 / current_data['odd'].apply(lambda x: 1 / x).sum())
-current_data['p_raw'] = np.where(current_data['odd'] < (current_data_1_psum * limit), 1 / current_data['odd'], 0)
+current_data['p_raw'] = np.where(current_data['odd'] < (current_data_1_psum * 100), 1 / current_data['odd'], 0)
 current_data['p'] = current_data['p_raw'] / current_data['p_raw'].sum()
 current_data['perc'] = (current_data['p'] * 100)
 current_data['perc'] = current_data['perc'].apply(lambda x: round(x, 1))
@@ -39,15 +47,15 @@ out = out.loc[:, ['name', 'perc']]
 out['perc_floor'] = out['perc'].apply(lambda x: int(np.floor(x)))
 out['perc_tens'] = ((out['perc'] - out['perc_floor']) * 10).astype(int)
 tmp = out['name'].str.split(' ')
-out['family_name'] = tmp.apply(lambda x: ' '.join(x[1:]))
-out['other_names'] = tmp.apply(lambda x: x[0])
+out['family_name'] = tmp.apply(lambda x: x[0])
+out['other_names'] = tmp.apply(lambda x: ' '.join(x[1:]))
 
 # save
-out.to_json(assets_path + "data/president2028/president2028_current_odds.json", orient='records')
+out.to_json(assets_path + "data/president/president_current_odds.json", orient='records')
 
 # last date
 last_date = pd.DataFrame([{'date': df.iloc[-1][0]}])
-last_date.to_json(assets_path + "data/president2028/president2028_current_odds_date.json", orient='records')
+last_date.to_json(assets_path + "data/president/president_current_odds_date.json", orient='records')
 
 #
 # prepare flourish + plotly charts
@@ -58,7 +66,7 @@ chart_data = (1 / chart_data_raw / current_data['p_raw'].sum()).apply(lambda x: 
 flourish_data = (chart_data * 100).apply(lambda x: round(x, 1))
 nice_dates = df['date'].apply(lambda x: str(datetime.datetime.fromisoformat(x).day) + ". " + str(datetime.datetime.fromisoformat(x).month) + ". " + datetime.datetime.fromisoformat(x).strftime("%y"))
 flourish_data.insert(0, 'date', nice_dates)
-flourish_data.to_csv(flourish_path + "president2028_odds_history.csv", index=False)
+flourish_data.to_csv(flourish_path + "president_odds_history.csv", index=False)
 
 # plotly
 fig = go.Figure()
@@ -91,7 +99,7 @@ fig.update_layout(
     ),
 )
 fig.update_yaxes(rangemode="tozero")
-fig.write_image(assets_path + "image/president2028_odds_history.svg")
+fig.write_image(assets_path + "image/president_odds_history.svg")
 
 fig.update_layout(
     autosize=False,
@@ -105,7 +113,7 @@ fig.update_layout(
         pad=0
     ),
 )
-fig.write_image(assets_path + "image/president2028_odds_history_small.svg")
+fig.write_image(assets_path + "image/president_odds_history_small.svg")
 
 # prepare plotly thumbnail
 fig = go.Figure()
@@ -126,7 +134,7 @@ fig.update_layout(template='plotly_white')
 fig.layout.yaxis.tickformat = ',.0%'
 # fig.update_xaxes(range=[df['date'][0], election_date])
 fig.update_layout(
-    title="Prezident/ka ČR 2028",
+    title="Prezident/ka ČR 2023",
     titlefont=dict(
       family='Ubuntu, verdana, arial, sans-serif',
       size=16,
@@ -148,7 +156,7 @@ fig.update_yaxes(rangemode="tozero")
 fig.update_xaxes(showticklabels=False)
 fig.update_yaxes(showticklabels=False)
 # fig.update_xaxes(visible=False)
-fig.write_image(assets_path + "image/president2028_thumbnail.svg")
+fig.write_image(assets_path + "image/president_thumbnail.svg")
 
 # prepare plotly sharing picture
 fig = go.Figure()
@@ -180,7 +188,7 @@ fig.update_layout(
       size=30
     ),
     title=dict(
-      text="Mandáty.cz: Prezident/ka ČR 2028",
+      text="Mandáty.cz: Prezident/ka ČR 2023",
       font=dict(
         color="#772953",
         size=45,
@@ -214,11 +222,11 @@ fig.update_layout(
 #             showarrow=False)
 
 d = datetime.datetime.now().isoformat()
-filename = public_path + d + "_president2028.png"
+filename = public_path + d + "_president.png"
 
-with open(assets_path + "data/president2028/president2028_share_image.json", "w") as fout:
+with open(assets_path + "data/president/president_share_image.json", "w") as fout:
   dd = {
-    'filename': "shares/" + d + "_president2028.png"
+    'filename': "shares/" + d + "_president.png"
   }
   json.dump(dd, fout)
 
