@@ -53,6 +53,8 @@ last_date.to_json(assets_path + "data/president2028/president2028_current_odds_d
 # prepare flourish + plotly charts
 chart_data_raw = df.loc[:, out['name']]
 chart_data = (1 / chart_data_raw / current_data['p_raw'].sum()).apply(lambda x: round(x, 3))
+# hotfixing https://github.com/michalskop/mandaty-sk-2023/issues/1
+chart_data = chart_data.apply(lambda row: row / row.sum() if row.sum() > 1 else row, axis=1)
 
 # flourish
 flourish_data = (chart_data * 100).apply(lambda x: round(x, 1))
