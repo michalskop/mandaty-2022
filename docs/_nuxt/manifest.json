@@ -1,11 +1,11 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-d977bade.mjs",
+    "file": "entry-b3d13c65.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "isDynamicEntry": true,
     "dynamicImports": [
-      "_plotly-d88bf982.mjs",
+      "_plotly-a0126938.mjs",
       "assets/data/psp/data.json",
       "pages/archiv.vue",
       "pages/fest.vue",
@@ -20,16 +20,16 @@
     ],
     "assets": [
       "psp_thumbnail.05a21bdf.svg",
-      "president2028_thumbnail.28204c64.svg",
+      "president2028_thumbnail.e95da64d.svg",
       "psp_polls_history_small.fb803963.svg",
       "president_odds_history.19502ec7.svg",
       "president_odds_history_small.ba918a47.svg",
-      "president2028_odds_history.9aeaa84d.svg",
-      "president2028_odds_history_small.9773bac7.svg"
+      "president2028_odds_history.df239b20.svg",
+      "president2028_odds_history_small.d3ae6485.svg"
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-ebac5c93.mjs",
+    "file": "archiv-e225e157.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -37,7 +37,7 @@
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-28bee063.mjs",
+    "file": "fest-fc97b232.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -45,51 +45,51 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-eb1b513d.mjs",
+    "file": "index-1a12cd7b.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-0b39de54.mjs",
+      "_ChartLinks-44c8a070.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-76bc774a.mjs"
+      "_DecNumber-0dbb270e.mjs"
     ],
     "dynamicImports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_ChartLinks-0b39de54.mjs": {
-    "file": "ChartLinks-0b39de54.mjs",
+  "_ChartLinks-44c8a070.mjs": {
+    "file": "ChartLinks-44c8a070.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_DecNumber-76bc774a.mjs": {
-    "file": "DecNumber-76bc774a.mjs",
+  "_DecNumber-0dbb270e.mjs": {
+    "file": "DecNumber-0dbb270e.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/president-2023.vue": {
-    "file": "president-2023-fc5aadf0.mjs",
+    "file": "president-2023-17b8f9b0.mjs",
     "src": "pages/president-2023.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-0b39de54.mjs",
+      "_ChartLinks-44c8a070.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-76bc774a.mjs"
+      "_DecNumber-0dbb270e.mjs"
     ]
   },
   "pages/president-2028.vue": {
-    "file": "president-2028-791fdb2a.mjs",
+    "file": "president-2028-3f9d6651.mjs",
     "src": "pages/president-2028.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-0b39de54.mjs",
+      "_ChartLinks-44c8a070.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/test.vue": {
-    "file": "test-a3b30667.mjs",
+    "file": "test-2d3d2e35.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -97,7 +97,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-7e08477d.mjs",
+    "file": "custom-3530dab8.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -107,8 +107,8 @@
       "custom.067cef2e.css"
     ]
   },
-  "_plotly-d88bf982.mjs": {
-    "file": "plotly-d88bf982.mjs",
+  "_plotly-a0126938.mjs": {
+    "file": "plotly-a0126938.mjs",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
