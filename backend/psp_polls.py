@@ -245,6 +245,9 @@ for special in [True, False]:
   # prepare flourish + plotly charts
   mu.sort_values([mu.index.max()], ascending=False, axis=1, inplace=True)
   mu.sort_index(inplace=True)
+  # if last value is NaN, set it to the last non-NaN value
+  for col in mu.columns:
+    mu[col].fillna(method='ffill', inplace=True)
   allvalues.index = middle_dates
   allvalues.sort_index(inplace=True)
   middle_dates = allvalues.index.tolist()
@@ -307,12 +310,16 @@ for special in [True, False]:
       color = choices[choices['id'] == name].iloc[0]['color']
     except:
       color = '#BBBBBB'
+    if mu[name].iloc[-1] > 0:
+      name_perc = str(round(mu[name].iloc[-1] * 100)) + '%'
+    else:
+      name_perc = ''
     fig.add_trace(go.Scatter(
       x=x,
       y=mu[name],
       mode='lines',
       line_shape='spline',
-      name=name + ": " + str(round(mu[name][len(mu) - 1] * 100)) + '%',
+      name=name + ": " + name_perc,
       line=dict(
         width=7,
         color=color
@@ -370,12 +377,16 @@ for special in [True, False]:
       color = choices[choices['id'] == name].iloc[0]['color']
     except:
       color = '#BBBBBB'
+    if mu[name].iloc[-1] > 0:
+      name_perc = str(round(mu[name].iloc[-1] * 100)) + '%'
+    else:
+      name_perc = ''
     fig.add_trace(go.Scatter(
         x=x,
         y=mu[name],
         mode='lines',
         line_shape='spline',
-        name=name + ": " + str(round(mu[name][len(mu) - 1] * 100)) + '%',
+        name=name + ": " + name_perc,
         line=dict(
           width=5,
           color=color
@@ -418,12 +429,16 @@ for special in [True, False]:
       color = choices[choices['id'] == name].iloc[0]['color']
     except:
       color = '#BBBBBB'
+    if mu[name].iloc[-1] > 0:
+      name_perc = str(round(mu[name].iloc[-1] * 100)) + '%'
+    else:
+      name_perc = ''
     fig.add_trace(go.Scatter(
         x=x,
         y=mu[name],
         mode='lines',
         line_shape='spline',
-        name=name + ": " + str(round(mu[name][len(mu) - 1] * 100)) + '%',
+        name=name + ": " + name_perc,
         line=dict(
           width=5,
           color=color
