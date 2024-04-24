@@ -43,7 +43,7 @@ special_coalitions = {
 }
 
 # run everything twice:
-# 1. with special coalitions -> used only for the basic overview on Mandáty.cz
+# 1. with special coalitions -> used only for the basic overview on Mandáty.cz and SZ
 # 2. with parties -> used for the rest of the calculations
 # special = True needs to be run first, because many files will be overwritten in the second run
 for special in [True, False]:
@@ -502,9 +502,11 @@ for special in [True, False]:
   # 
   # First chart - current overview
   # https://public.flourish.studio/visualisation/10393920/
-  chartdata = pd.DataFrame(round(mu.iloc[-1] * 100).astype(int)).T
-  chartdata.insert(0, 'Region name', 'ČR')
-  chartdata.reset_index(drop=True).to_csv(flourish_path + "psp_polls_current_overview.csv", index=False)
+  # we want to use the special coalitions here
+  if special:
+    chartdata = pd.DataFrame(round(mu.iloc[-1] * 100).astype(int)).T
+    chartdata.insert(0, 'Region name', 'ČR')
+    chartdata.reset_index(drop=True).to_csv(flourish_path + "psp_polls_current_overview.csv", index=False)
 
   # Full chart
   # https://public.flourish.studio/visualisation/10768917/
