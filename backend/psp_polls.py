@@ -516,6 +516,8 @@ for special in [True, False]:
   # we want to use the special coalitions here
   if special:
     chartdata = pd.DataFrame(round(mu.iloc[-1] * 100).astype(int)).T
+    # rename columns to abbreviations
+    chartdata.columns = [id2abbreviation(col) for col in chartdata.columns]
     chartdata.insert(0, 'Region name', 'ČR')
     chartdata.reset_index(drop=True).to_csv(flourish_path + "psp_polls_current_overview.csv", index=False)
 
