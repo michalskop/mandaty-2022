@@ -39,8 +39,19 @@ election_date = '2025-10-01'
 
 # special coalitions:
 special_coalitions = {
-  'SPOLU': ['ODS', 'KDU-ČSL', 'TOP 09']
+  'SPOLU': ['ODS', 'KDU-ČSL', 'TOP 09'],
+  'Přísaha+Motor': ['Přísaha', 'Motoristé'],
 }
+
+
+def id2abbreviation(id):
+  """ Abbreviation from id."""
+  if len(choices[choices['id'] == id]) > 0:
+    abbreviation = choices[choices['id'] == id].iloc[0]['abbreviation']
+  else:
+    abbreviation = id
+  return abbreviation
+
 
 # run everything twice:
 # 1. with special coalitions -> used only for the basic overview on Mandáty.cz and SZ
@@ -319,7 +330,7 @@ for special in [True, False]:
       y=mu[name],
       mode='lines',
       line_shape='spline',
-      name=name + ": " + name_perc,
+      name=id2abbreviation(name) + ": " + name_perc,
       line=dict(
         width=7,
         color=color
@@ -613,4 +624,3 @@ for special in [True, False]:
 
   origin.index = origin['strana']
   origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False, decimal=',')
-

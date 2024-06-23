@@ -25,6 +25,7 @@ export default defineComponent({
       Object.keys(data.mu).forEach((name) => {
         // Get the color for the column
         const color = getColor(name, data)
+        const abbreviation = getAbbreviation(name, data)
 
         // Add the lo and hi traces
         const hiSame = data.hi[name]
@@ -49,7 +50,7 @@ export default defineComponent({
           y: data.mu[name],
           mode: 'lines',
           connectgaps: true,
-          name: `${name}: ${Math.round(data.mu[name][data.mu[name].length - 1] * 100)}%`,
+          name: `${abbreviation}: ${Math.round(data.mu[name][data.mu[name].length - 1] * 100)}%`,
           line: { color: color, width: 7, shape: 'spline' },
           type: 'scatter',
           legendgroup: name
@@ -206,6 +207,14 @@ export default defineComponent({
         return data.choices.find(c => c.id === name).color
       } catch {
         return '#BBBBBB'
+      }
+    }
+
+    const getAbbreviation = (name, data) => {
+      try {
+        return data.choices.find(c => c.id === name).abbreviation
+      } catch {
+        return name
       }
     }
 
