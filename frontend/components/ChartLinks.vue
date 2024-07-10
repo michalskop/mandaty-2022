@@ -8,12 +8,6 @@
         </NuxtLink>
       </div>
       <div class="col-md-4">
-        <NuxtLink to="/ep-2024">
-          <img src="~/assets/image/ep2024_thumbnail.svg" class="image" />
-          <span class="text-image">Evropské volby ČR 2024</span>
-        </NuxtLink>
-      </div>
-      <div class="col-md-4">
         <NuxtLink to="/president-2028">
           <img src="~/assets/image/president2028_thumbnail.svg" class="image" />
           <span class="text-image">Prezidentské volby 2028</span>
