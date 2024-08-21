@@ -205,7 +205,7 @@ for special in [True, False]:
 
   # estimates
   # last row
-  m = mun.loc[mun.index.max()] 
+  m = mun.loc[mun.index.max()]
   diagonal = np.diag(sigman.iloc[0]) * coef
   cov = np.matmul(np.matmul(diagonal, corr), diagonal)
   samples = pd.DataFrame(np.random.multivariate_normal(m, cov, runs) / sample_n)
@@ -497,14 +497,14 @@ for special in [True, False]:
       # paper_bgcolor="#772953",
   )
 
-  d = datetime.datetime.now().isoformat()
-  filename = public_path + d + "_psp.png"
+  dt = datetime.datetime.now().isoformat()
+  filename = public_path + dt + "_psp.png"
 
   with open(assets_path + "data/psp/psp_share_image.json", "w") as fout:
-    dd = {
-      'filename': "shares/" + d + "_psp.png"
+    ddt = {
+      'filename': "shares/" + dt + "_psp.png"
     }
-    json.dump(dd, fout)
+    json.dump(ddt, fout)
 
   fig.write_image(filename)
 
@@ -620,6 +620,8 @@ for special in [True, False]:
       d1 = mm - smaller[-1]
       d2 = greater[0] - mm
       row = round((d2 / (d1 + d2) * mu.loc[smaller[-1].isoformat()[0:10], :] + d1 / (d1 + d2) * mu.loc[greater[0].isoformat()[0:10], :]) * 1000) / 10
+    if (not(isinstance(row, pd.Series))):
+      row = row.iloc[0]
     rows = pd.concat([rows, pd.DataFrame(row).T])
 
   rows.index = [datetime.datetime.strftime(mm, "%m/%y") for mm in midmonths]
