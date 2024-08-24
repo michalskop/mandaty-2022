@@ -595,7 +595,10 @@ for special in [True, False]:
   names.to_json(app_path + "psp/psp_polls_coalitions_candidates.json", orient='records')
 
   # RACE CHART
-  origin = pd.read_csv(data_path + "origin_race_chart.csv")
+  if special:
+    origin = pd.read_csv(data_path + "origin_race_chart.csv")
+  else:
+    origin = pd.read_csv(data_path + "origin_race_chart_parties.csv")
 
   mx = mu.index.max()
   mx.month
@@ -627,4 +630,7 @@ for special in [True, False]:
   rows.index = [datetime.datetime.strftime(mm, "%m/%y") for mm in midmonths]
 
   origin.index = origin['strana']
-  origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False, decimal=',')
+  if special:
+    origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False, decimal=',')
+  else:
+    origin.join(rows.T).to_csv(flourish_path + "psp_race_chart_parties.csv", index=False, decimal=',')  
