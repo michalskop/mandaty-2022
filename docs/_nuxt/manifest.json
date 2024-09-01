@@ -1,11 +1,11 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-03278c79.mjs",
+    "file": "entry-93c0b5f1.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "isDynamicEntry": true,
     "dynamicImports": [
-      "_plotly-107a25da.mjs",
+      "_plotly-a0c84d7a.mjs",
       "assets/data/ep2024/data.json",
       "assets/data/psp/data.json",
       "pages/archiv.vue",
@@ -22,17 +22,17 @@
     ],
     "assets": [
       "psp_thumbnail.71d17495.svg",
-      "president2028_thumbnail.80634b2b.svg",
+      "president2028_thumbnail.1a3731c8.svg",
       "ep2024_polls_history_small.526420c7.svg",
       "psp_polls_history_small.4e04a8f7.svg",
       "president_odds_history.19502ec7.svg",
       "president_odds_history_small.ba918a47.svg",
-      "president2028_odds_history.bffd4e28.svg",
-      "president2028_odds_history_small.ed6f1996.svg"
+      "president2028_odds_history.29782a32.svg",
+      "president2028_odds_history_small.e2cda285.svg"
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-c7250d35.mjs",
+    "file": "archiv-ca7ed408.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -40,32 +40,32 @@
     ]
   },
   "pages/ep-2024.vue": {
-    "file": "ep-2024-2b464ca2.mjs",
+    "file": "ep-2024-9f7dae5c.mjs",
     "src": "pages/ep-2024.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-9ff01c47.mjs",
+      "_ChartLinks-9c5ba175.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-97e86af9.mjs"
+      "_DecNumber-ee763c88.mjs"
     ],
     "dynamicImports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_ChartLinks-9ff01c47.mjs": {
-    "file": "ChartLinks-9ff01c47.mjs",
+  "_ChartLinks-9c5ba175.mjs": {
+    "file": "ChartLinks-9c5ba175.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_DecNumber-97e86af9.mjs": {
-    "file": "DecNumber-97e86af9.mjs",
+  "_DecNumber-ee763c88.mjs": {
+    "file": "DecNumber-ee763c88.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-6343c0d4.mjs",
+    "file": "fest-4b45d22e.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -73,39 +73,39 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-3e5c9d55.mjs",
+    "file": "index-08d89024.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-9ff01c47.mjs",
+      "_ChartLinks-9c5ba175.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-97e86af9.mjs"
+      "_DecNumber-ee763c88.mjs"
     ],
     "dynamicImports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/president-2023.vue": {
-    "file": "president-2023-68922693.mjs",
+    "file": "president-2023-1fc6ccc4.mjs",
     "src": "pages/president-2023.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-9ff01c47.mjs",
+      "_ChartLinks-9c5ba175.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-97e86af9.mjs"
+      "_DecNumber-ee763c88.mjs"
     ]
   },
   "pages/president-2028.vue": {
-    "file": "president-2028-6e64c76b.mjs",
+    "file": "president-2028-e09ab930.mjs",
     "src": "pages/president-2028.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-9ff01c47.mjs",
+      "_ChartLinks-9c5ba175.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/test.vue": {
-    "file": "test-b84521a2.mjs",
+    "file": "test-345c3084.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -113,7 +113,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-b1b81a94.mjs",
+    "file": "custom-f04729d7.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -123,8 +123,8 @@
       "custom.067cef2e.css"
     ]
   },
-  "_plotly-107a25da.mjs": {
-    "file": "plotly-107a25da.mjs",
+  "_plotly-a0c84d7a.mjs": {
+    "file": "plotly-a0c84d7a.mjs",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
