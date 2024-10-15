@@ -10,6 +10,11 @@ import numpy as np
 from scipy.spatial import distance
 from scipy.stats import binom
 
+# this part: sloup 2016 version only
+import plotly.io as pio
+pio.orca.config.executable = '/home/michal/.nvm/versions/node/v14.6.0/bin/orca'
+
+
 source_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhp47e91OazMSiu56gOTsUtnFEIaJiIhJbsgNTylwt89XIEnbiVyObJ8xHEoZPObo6ntOmQ9Tg-sf9/pub?gid=0&single=true&output=csv"
 choices_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhp47e91OazMSiu56gOTsUtnFEIaJiIhJbsgNTylwt89XIEnbiVyObJ8xHEoZPObo6ntOmQ9Tg-sf9/pub?gid=302501468&single=true&output=csv"
 
@@ -18,6 +23,7 @@ public_path = "frontend/public/shares/"
 app_path = "frontend/assets/data/"
 flourish_path = "backend/data/"
 data_path = "backend/data/"
+abs_path = "/home/michal/dev/mandaty-2022/" # sloup 2016 version
 
 source = pd.read_csv(source_url)
 choices = pd.read_csv(choices_url)
@@ -196,9 +202,9 @@ for special in [True, False]:
     return out
 
   # last regional results
-  last_regional_results = pd.read_csv(data_path + "psp2021_regional_results.csv")
+  last_regional_results = pd.read_csv(abs_path + data_path + "psp2021_regional_results.csv")
   last_regional_results = last_regional_results.merge(choices.loc[:, ['id', 'needs']], left_on="party", right_on="id", how="left")
-  regions_seats = pd.read_csv(data_path + "psp2021_seats.csv")
+  regions_seats = pd.read_csv(abs_path + data_path + "psp2021_seats.csv")
   region_codes = regions_seats['region_code'].tolist()
   total_last_votes = last_regional_results[~last_regional_results['party'].isin(['SPOLU', 'Piráti+STAN'])].sum()['votes']
   # total_last_votes = 5375090  # 2021
@@ -242,9 +248,9 @@ for special in [True, False]:
   stats = stats.fillna(0)
 
   if special:
-    stats.to_json(assets_path + "data/psp/stats.json", force_ascii=False, orient='records')
+    stats.to_json(abs_path + assets_path + "data/psp/stats.json", force_ascii=False, orient='records')
 
-    with open(assets_path + "data/psp/current_seats.json", "w") as fout:
+    with open(abs_path + assets_path + "data/psp/current_seats.json", "w") as fout:
         rich = {
             "data": stats[stats['hi'] > 0].to_dict(orient='records'),
             "date": d.max()['middle_date'].isoformat()[0:10]
@@ -286,7 +292,7 @@ for special in [True, False]:
     dataPlotly['hi'][name] = hi[name].replace(np.nan, None).tolist()
     dataPlotly['allvalues'][name] = allvalues[name].replace(np.nan, None).tolist()
 
-  with open(assets_path + "data/psp/data.json", "w") as fout:
+  with open(abs_path + assets_path + "data/psp/data.json", "w") as fout:
     json.dump(dataPlotly, fout, ensure_ascii=False)
 
   def _html2rgba(html, a):
@@ -364,7 +370,7 @@ for special in [True, False]:
       ),
   )
   fig.update_yaxes(rangemode="tozero")
-  fig.write_image(assets_path + "image/psp_polls_history.svg")
+  fig.write_image(abs_path + assets_path + "image/psp_polls_history.svg")
 
   # small main chart - continuing from above
   fig.update_layout(
@@ -379,7 +385,7 @@ for special in [True, False]:
           pad=0
       ),
   )
-  fig.write_image(assets_path + "image/psp_polls_history_small.svg")
+  fig.write_image(abs_path + assets_path + "image/psp_polls_history_small.svg")
 
   # thumbnail
   fig = go.Figure()
@@ -431,7 +437,7 @@ for special in [True, False]:
   fig.update_yaxes(rangemode="tozero")
   fig.update_xaxes(showticklabels=False)
   fig.update_yaxes(showticklabels=False)
-  fig.write_image(assets_path + "image/psp_thumbnail.svg")
+  fig.write_image(abs_path + assets_path + "image/psp_thumbnail.svg")
 
   # sharing picture
   fig = go.Figure()
@@ -498,11 +504,11 @@ for special in [True, False]:
   )
 
   dt = datetime.datetime.now().isoformat()
-  filename = public_path + dt + "_psp.png"
+  filename = abs_path + public_path + dt + "_psp.png"
 
-  with open(assets_path + "data/psp/psp_share_image.json", "w") as fout:
+  with open(abs_path + assets_path + "data/psp/psp_share_image.json", "w") as fout:
     ddt = {
-      'filename': "shares/" + dt + "_psp.png"
+      'filename': abs_path + "shares/" + dt + "_psp.png"
     }
     json.dump(ddt, fout)
 
@@ -519,7 +525,7 @@ for special in [True, False]:
     # rename columns to abbreviations
     chartdata.columns = [id2abbreviation(col) for col in chartdata.columns]
     chartdata.insert(0, 'Region name', 'ČR')
-    chartdata.reset_index(drop=True).to_csv(flourish_path + "psp_polls_current_overview.csv", index=False)
+    chartdata.reset_index(drop=True).to_csv(abs_path + flourish_path + "psp_polls_current_overview.csv", index=False)
 
   # Full chart
   # https://public.flourish.studio/visualisation/10768917/
@@ -555,7 +561,7 @@ for special in [True, False]:
   concats = [fulldata, valss.loc[:, fulldata.columns]]
 
   fchart = pd.concat(concats)
-  fchart.to_csv(flourish_path + "psp_polls_fchart.csv", index=False)
+  fchart.to_csv(abs_path + flourish_path + "psp_polls_fchart.csv", index=False)
 
   # TABLES
   # parties
@@ -571,10 +577,10 @@ for special in [True, False]:
 
   t = t.sort_values(['middle_date'], ascending=[False])
 
-  t.to_json(app_path + "psp/psp_polls_parties_table.json", orient='records')
+  t.to_json(abs_path + app_path + "psp/psp_polls_parties_table.json", orient='records')
 
   names = pd.DataFrame([{'names': allvaluesperc.columns}])
-  names.to_json(app_path + "psp/psp_polls_parties_candidates.json", orient='records')
+  names.to_json(abs_path + app_path + "psp/psp_polls_parties_candidates.json", orient='records')
 
   # coalitions
   source1 = source[source['tags'] == 'coalitions']
@@ -589,16 +595,16 @@ for special in [True, False]:
 
   t = t.sort_values(['middle_date'], ascending=[False])
 
-  t.to_json(app_path + "psp/psp_polls_coalitions_table.json", orient='records')
+  t.to_json(abs_path + app_path + "psp/psp_polls_coalitions_table.json", orient='records')
 
   names = pd.DataFrame([{'names': allvaluesperc.columns}])
-  names.to_json(app_path + "psp/psp_polls_coalitions_candidates.json", orient='records')
+  names.to_json(abs_path + app_path + "psp/psp_polls_coalitions_candidates.json", orient='records')
 
   # RACE CHART
   if special:
-    origin = pd.read_csv(data_path + "origin_race_chart.csv")
+    origin = pd.read_csv(abs_path + data_path + "origin_race_chart.csv")
   else:
-    origin = pd.read_csv(data_path + "origin_race_chart_parties.csv")
+    origin = pd.read_csv(abs_path + data_path + "origin_race_chart_parties.csv")
 
   mx = mu.index.max()
   mx.month
@@ -631,6 +637,6 @@ for special in [True, False]:
 
   origin.index = origin['strana']
   if special:
-    origin.join(rows.T).to_csv(flourish_path + "psp_race_chart.csv", index=False, decimal=',')
+    origin.join(rows.T).to_csv(abs_path + flourish_path + "psp_race_chart.csv", index=False, decimal=',')
   else:
-    origin.join(rows.T).to_csv(flourish_path + "psp_race_chart_parties.csv", index=False, decimal=',')  
+    origin.join(rows.T).to_csv(abs_path + flourish_path + "psp_race_chart_parties.csv", index=False, decimal=',')  
