@@ -18,6 +18,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.0.0'
+
       - name: Install and Build and Copy 🔧
         working-directory: frontend
         run: |
@@ -35,8 +40,6 @@ jobs:
           find docs/_nuxt/fest-* -mtime +30 -exec rm {} \;
           find docs/_nuxt/test-* -mtime +30 -exec rm {} \;
           find docs/_nuxt/snemovna-* -mtime +30 -exec rm {} \;
-
-
 
       - name: Commit and push if it changed
         run: |-
