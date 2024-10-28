@@ -163,7 +163,7 @@ for special in [True, False]:
       overs = region[region['value'] > region['needs']]
       overs = overs.assign(nof_seats=(overs.loc[:, ('estimated_votes')].divide(N)).apply(math.floor)) # počty mandátů §50 (3)
       overs.loc[:, ('rest')] = overs['estimated_votes'] - overs['nof_seats'] * N  # zbytky §50 (4)
-      overs.loc[:, ('rest_rank')] = overs['rest'].rank()# pořadí zbytků §50 (4)
+      overs.loc[:, ('rest_rank')] = overs['rest'].rank() # pořadí zbytků §50 (4)
 
       # correction §50 (4)
       overseats = overs['nof_seats'].sum() - rs
@@ -175,8 +175,14 @@ for special in [True, False]:
           overs['rest'][i] = overs['estimated_votes'][i] - overs['nof_seats'][i] * N
 
 
-      # regional_seats = regional_seats.append(overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']], ignore_index=True)
-      regional_seats = pd.concat([regional_seats, overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']]], ignore_index=True)
+      # Exclude empty or all-NA columns before concatenation
+      overs = overs.dropna(axis=1, how='all')
+      # first run
+      if regional_seats.empty:
+        regional_seats = overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']]
+      # Check if overs is not empty before concatenation
+      elif not overs.empty:
+        regional_seats = pd.concat([regional_seats, overs.loc[:, ['party', 'region_code', 'nof_seats', 'rest']]], ignore_index=True)
 
     # 2nd scrutinium
     ss = 200 - regional_seats['nof_seats'].sum()
@@ -184,14 +190,14 @@ for special in [True, False]:
 
     RN = rests / (ss + 1)
 
-    extras = pd.pivot_table(regional_seats, values=['rest'], index='party', aggfunc=np.sum).reset_index()
+    extras = pd.pivot_table(regional_seats, values=['rest'], index='party', aggfunc='sum').reset_index()
     extras.loc[:, ('nof_seats')] = (extras['rest'] / RN).apply(math.floor)
     extras.loc[:, ('rest_rest')] = extras['rest'] - extras['nof_seats'] * RN
     extras.loc[:, ('rank')] = extras['rest_rest'].rank()
     last_rest = ss - extras['nof_seats'].sum()
     extras.loc[:, ('extra')] = extras['nof_seats'] + 1 * (extras['rank'] <= last_rest)
 
-    nof_seats = pd.pivot_table(regional_seats, values=['nof_seats'], index='party', aggfunc=np.sum).reset_index()
+    nof_seats = pd.pivot_table(regional_seats, values=['nof_seats'], index='party', aggfunc='sum').reset_index()
     nof_seats = nof_seats.merge(extras, how='left', left_on='party', right_on='party')
     nof_seats.loc[:, ('seats')] = nof_seats['nof_seats_x'] + nof_seats['extra']
 
@@ -221,7 +227,10 @@ for special in [True, False]:
   for i in range(runs):
     sample = samples.iloc[i].reset_index()
     sample.columns = ['party', 'value']
-    estimates = pd.concat([estimates, imperiali(sample)], ignore_index=True)
+    if estimates.empty:
+      estimates = imperiali(sample)
+    else:
+      estimates = pd.concat([estimates, imperiali(sample)], ignore_index=True)
 
   estimates = estimates.fillna(0)
 
@@ -532,6 +541,7 @@ for special in [True, False]:
   # averages
   pollsters = source1['pollster:id'].unique()
 
+  mu = mu[~mu.index.duplicated(keep='last')]
   mus = mu.unstack().reset_index()
   mus.columns = ['Průměr', 'Datum', 'Hodnota']
   mus['Strana'] = mus['Průměr']
