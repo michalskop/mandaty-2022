@@ -11,6 +11,10 @@
 
     <hr />
 
+    <SnemovnaPollsPartiesIn />
+
+    <hr />
+
     <SnemovnaPollsChart />
 
     <hr />
