@@ -27,6 +27,8 @@ abs_path = "/home/michal/dev/mandaty-2022/" # sloup 2016 version
 
 source = pd.read_csv(source_url)
 choices = pd.read_csv(choices_url)
+coalitions_url = data_path + "coalitions.csv"
+coalitions_selected = pd.read_csv(coalitions_url)
 
 others = 'jiné strany'
 
@@ -42,11 +44,13 @@ runs = 1000  # number of runs
 coef = 2 # coefficient * sd (other error)
 
 election_date = '2025-10-01'
+majority = 101
 
 # special coalitions:
 special_coalitions = {
   'SPOLU': ['ODS', 'KDU-ČSL', 'TOP 09'],
   'Přísaha+Motor': ['Přísaha', 'Motoristé'],
+  'Stačilo': ['KSČM', 'SOCDEM'],  # Variant Stačilo!
 }
 
 
@@ -257,7 +261,7 @@ for special in [True, False]:
   stats = stats.fillna(0)
 
   if special:
-    stats.to_json(abs_path + assets_path + "data/psp/stats.json", force_ascii=False, orient='records')
+    stats.to_json(abs_path + assets_path + "data/psp/stats.json", force_ascii=False, orient='records', indent=2)
 
     with open(abs_path + assets_path + "data/psp/current_seats.json", "w") as fout:
         rich = {
@@ -266,6 +270,73 @@ for special in [True, False]:
         }
         json.dump(rich, fout, ensure_ascii=False)
 
+  # Coalitions: coalitions have to include all the parties, coalitions_inc include also those with 0 seats
+  if special:
+    coalitions = pd.DataFrame(columns=['ids', 'majoririty_probability', 'seats'])
+    coalitions_inc = pd.DataFrame(columns=['ids', 'majoririty_probability', 'seats'])
+
+    def _coalition_probability(estimates, parties_ids, majority, runs):
+      t = estimates[parties_ids].sum(axis=1)
+      return (t >= majority).sum() / runs
+    
+    # single parties
+    for party in estimates.columns:
+      it = {
+        'id': party,
+        'majority_probability': _coalition_probability(estimates, [party], majority, len(estimates)),
+        'seats': stats[stats['party'] == party]['seats'].iloc[0]
+      }
+      if coalitions.empty:
+        coalitions = pd.DataFrame([it])
+        coalitions_inc = pd.DataFrame([it])
+      else:
+        coalitions = pd.concat([coalitions, pd.DataFrame([it])])
+        coalitions_inc = pd.concat([coalitions_inc, pd.DataFrame([it])])
+
+    # two parties
+    for i in range(len(estimates.columns)):
+      for j in range(i + 1, len(estimates.columns)):
+        # for id, give the bigger one first
+        if stats[stats['party'] == estimates.columns[i]]['seats'].iloc[0] < stats[stats['party'] == estimates.columns[j]]['seats'].iloc[0]:
+          idx = estimates.columns[j] + '*' + estimates.columns[i]
+        else:
+          idx = estimates.columns[i] + '*' + estimates.columns[j]
+        # select only those with at least 1 seat for all parties
+        estimates_1 = estimates[(estimates[estimates.columns[i]] > 0) & (estimates[estimates.columns[j]] > 0)]
+        it = {
+          'id': idx,
+          'majority_probability': _coalition_probability(estimates_1, [estimates.columns[i], estimates.columns[j]], majority, len(estimates)),
+          'seats': stats[stats['party'] == estimates.columns[i]]['seats'].iloc[0] + stats[stats['party'] == estimates.columns[j]]['seats'].iloc[0]
+        }
+        itc = it.copy()
+        itc['majority_probability'] = _coalition_probability(estimates, [estimates.columns[i], estimates.columns[j]], majority, len(estimates))
+        coalitions = pd.concat([coalitions, pd.DataFrame([it])])
+        coalitions_inc = pd.concat([coalitions_inc, pd.DataFrame([itc])])
+
+    # selected coalitions
+    for i in range(len(coalitions_selected)):
+      idx = coalitions_selected.iloc[i]['id']
+      ids = coalitions_selected.iloc[i]['id'].split('*')
+      # select only those with at least 1 seat for all parties in ids
+      estimates_1 = estimates
+      for id in ids:
+        estimates_1 = estimates_1[estimates_1[id] > 0]
+      it = {
+        'id': idx,
+        'majority_probability': _coalition_probability(estimates_1, ids, majority, len(estimates)),
+        'seats': stats[stats['party'] == ids[0]]['seats'].iloc[0] + stats[stats['party'] == ids[1]]['seats'].iloc[0]
+      }
+      itc = it.copy()
+      itc['majority_probability'] = _coalition_probability(estimates, ids, majority, len(estimates))
+      coalitions = pd.concat([coalitions, pd.DataFrame([it])])
+      coalitions_inc = pd.concat([coalitions_inc, pd.DataFrame([itc])])
+    
+    coalitions = coalitions.sort_values(['majority_probability', 'seats'], ascending=False)
+    coalitions_inc = coalitions_inc.sort_values(['majority_probability', 'seats'], ascending=False)
+
+    # save
+    coalitions.to_json(abs_path + assets_path + "data/psp/coalitions.json", force_ascii=False, orient='records')
+    coalitions_inc.to_json(abs_path + assets_path + "data/psp/coalitions_inc.json", force_ascii=False, orient='records')
 
   #
   # prepare flourish + plotly charts
