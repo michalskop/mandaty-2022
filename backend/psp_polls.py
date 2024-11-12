@@ -50,7 +50,7 @@ majority = 101
 special_coalitions = {
   'SPOLU': ['ODS', 'KDU-ČSL', 'TOP 09'],
   'Přísaha+Motor': ['Přísaha', 'Motoristé'],
-  'Stačilo': ['KSČM', 'SOCDEM'],  # Variant Stačilo!
+  # 'Stačilo': ['KSČM', 'SOCDEM'],  # Variant Stačilo!
 }
 
 
@@ -324,7 +324,7 @@ for special in [True, False]:
       it = {
         'id': idx,
         'majority_probability': _coalition_probability(estimates_1, ids, majority, len(estimates)),
-        'seats': stats[stats['party'] == ids[0]]['seats'].iloc[0] + stats[stats['party'] == ids[1]]['seats'].iloc[0]
+        'seats': sum(stats[stats['party'] == party]['seats'].iloc[0] for party in ids)
       }
       itc = it.copy()
       itc['majority_probability'] = _coalition_probability(estimates, ids, majority, len(estimates))
