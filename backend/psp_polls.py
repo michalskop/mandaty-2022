@@ -89,8 +89,22 @@ for special in [True, False]:
 
   # replace parties with special coalitions
   if special:
+    # for sc in special_coalitions:
+    #   allvalues.loc[:, sc] = allvalues[special_coalitions[sc]].sum(axis=1)
+    #   allvalues = allvalues.drop(special_coalitions[sc], axis=1)
     for sc in special_coalitions:
-      allvalues.loc[:, sc] = allvalues[special_coalitions[sc]].sum(axis=1)
+      # Calculate the sum of the individual parties
+      coalition_sum = allvalues[special_coalitions[sc]].sum(axis=1)
+      
+      # Check if the coalition column exists
+      if sc in allvalues.columns:
+        # Fill NaN values in the coalition column with the sum of the individual parties
+        allvalues[sc] = allvalues[sc].fillna(coalition_sum)
+      else:
+        # Create the coalition column with the sum of the individual parties
+        allvalues[sc] = coalition_sum
+    
+      # Drop the individual parties columns
       allvalues = allvalues.drop(special_coalitions[sc], axis=1)
 
   # remove others
