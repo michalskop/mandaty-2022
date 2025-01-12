@@ -49,7 +49,7 @@ majority = 101
 # special coalitions:
 special_coalitions = {
   'SPOLU': ['ODS', 'KDU-ČSL', 'TOP 09'],
-  'Přísaha+Motor': ['Přísaha', 'Motoristé'],
+  # 'Přísaha+Motor': ['Přísaha', 'Motoristé'],
   # 'Stačilo': ['KSČM', 'SOCDEM'],  # Variant Stačilo!
 }
 
@@ -230,13 +230,13 @@ for special in [True, False]:
   last_regional_results = last_regional_results.merge(choices.loc[:, ['id', 'needs']], left_on="party", right_on="id", how="left")
   regions_seats = pd.read_csv(abs_path + data_path + "psp2021_seats.csv")
   region_codes = regions_seats['region_code'].tolist()
-  total_last_votes = last_regional_results[~last_regional_results['party'].isin(['SPOLU', 'Piráti+STAN'])].sum()['votes']
-  # total_last_votes = 5375090  # 2021
+  # total_last_votes = last_regional_results[~last_regional_results['party'].isin(['SPOLU', 'Piráti+STAN'])].sum()['votes']
+  total_last_votes = 5375090  # 2021
 
   # estimates
   # last row
   m = mun.loc[mun.index.max()]
-  diagonal = np.diag(sigman.iloc[0]) * coef
+  diagonal = np.diag(sigman.iloc[-1]) * coef
   cov = np.matmul(np.matmul(diagonal, corr), diagonal)
   samples = pd.DataFrame(np.random.multivariate_normal(m, cov, runs) / sample_n)
   samples.columns = selected_parties
