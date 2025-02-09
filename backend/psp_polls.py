@@ -235,7 +235,11 @@ for special in [True, False]:
 
   # estimates
   # last row
-  m = mun.loc[mun.index.max()]
+  tm = mun.loc[mun.index.max()]
+  if isinstance(tm, pd.Series):
+    m = tm
+  else:
+    m = tm.iloc[0, :]
   diagonal = np.diag(sigman.iloc[-1]) * coef
   cov = np.matmul(np.matmul(diagonal, corr), diagonal)
   samples = pd.DataFrame(np.random.multivariate_normal(m, cov, runs) / sample_n)
