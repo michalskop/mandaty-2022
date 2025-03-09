@@ -109,6 +109,12 @@ for special in [True, False]:
 
   # remove others
   allvalues = allvalues.drop(others, axis=1)
+  
+  # remove columns from special coalitions
+  for sc in special_coalitions:
+    for party in special_coalitions[sc]:
+      if party in allvalues.columns:
+          allvalues = allvalues.drop(party, axis=1)
 
   # find max values
   maxvalues = allvalues.max(axis=0)
@@ -158,7 +164,6 @@ for special in [True, False]:
   mun.columns = selected_parties
   # sigma
   sigman = np.sqrt(mu1 * (1 - mu1) * sample_n)
-
 
   # Imperiali
   def imperiali(sample):
