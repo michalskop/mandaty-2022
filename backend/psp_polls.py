@@ -395,8 +395,9 @@ for special in [True, False]:
     dataPlotly['hi'][name] = hi[name].replace(np.nan, None).tolist()
     dataPlotly['allvalues'][name] = allvalues[name].replace(np.nan, None).tolist()
 
-  with open(abs_path + assets_path + "data/psp/data.json", "w") as fout:
-    json.dump(dataPlotly, fout, ensure_ascii=False)
+  if special:
+    with open(abs_path + assets_path + "data/psp/data.json", "w") as fout:
+      json.dump(dataPlotly, fout, ensure_ascii=False)
 
   def _html2rgba(html, a):
     html = html.strip().strip('#')
@@ -473,7 +474,8 @@ for special in [True, False]:
       ),
   )
   fig.update_yaxes(rangemode="tozero")
-  fig.write_image(abs_path + assets_path + "image/psp_polls_history.svg")
+  if special:
+    fig.write_image(abs_path + assets_path + "image/psp_polls_history.svg")
 
   # small main chart - continuing from above
   fig.update_layout(
@@ -488,7 +490,8 @@ for special in [True, False]:
           pad=0
       ),
   )
-  fig.write_image(abs_path + assets_path + "image/psp_polls_history_small.svg")
+  if special:
+    fig.write_image(abs_path + assets_path + "image/psp_polls_history_small.svg")
 
   # thumbnail
   fig = go.Figure()
@@ -540,7 +543,8 @@ for special in [True, False]:
   fig.update_yaxes(rangemode="tozero")
   fig.update_xaxes(showticklabels=False)
   fig.update_yaxes(showticklabels=False)
-  fig.write_image(abs_path + assets_path + "image/psp_thumbnail.svg")
+  if special:
+    fig.write_image(abs_path + assets_path + "image/psp_thumbnail.svg")
 
   # sharing picture
   fig = go.Figure()
@@ -615,7 +619,8 @@ for special in [True, False]:
     }
     json.dump(ddt, fout)
 
-  fig.write_image(filename)
+  if special:
+    fig.write_image(filename)
 
 
   # FLOURISH
