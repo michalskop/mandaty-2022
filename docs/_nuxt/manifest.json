@@ -1,11 +1,11 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-d69f0336.mjs",
+    "file": "entry-20a0c591.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "isDynamicEntry": true,
     "dynamicImports": [
-      "_plotly-23a4087b.mjs",
+      "_plotly-b91d085d.mjs",
       "assets/data/ep2024/data.json",
       "assets/data/psp/data.json",
       "pages/archiv.vue",
@@ -21,10 +21,10 @@
       "entry.e616280e.css"
     ],
     "assets": [
-      "psp_thumbnail.c60d8afc.svg",
+      "psp_thumbnail.37840288.svg",
       "president2028_thumbnail.6dbb6e21.svg",
       "ep2024_polls_history_small.526420c7.svg",
-      "psp_polls_history_small.bf7e3a2f.svg",
+      "psp_polls_history_small.effae0f3.svg",
       "president_odds_history.19502ec7.svg",
       "president_odds_history_small.ba918a47.svg",
       "president2028_odds_history.2da63cd8.svg",
@@ -32,7 +32,7 @@
     ]
   },
   "pages/archiv.vue": {
-    "file": "archiv-1deb4217.mjs",
+    "file": "archiv-a76cd854.mjs",
     "src": "pages/archiv.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -40,32 +40,32 @@
     ]
   },
   "pages/ep-2024.vue": {
-    "file": "ep-2024-1c0cd662.mjs",
+    "file": "ep-2024-3949f196.mjs",
     "src": "pages/ep-2024.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-454d63c5.mjs",
+      "_ChartLinks-d296b34c.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-ba7657d9.mjs"
+      "_DecNumber-5ead13d2.mjs"
     ],
     "dynamicImports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_ChartLinks-454d63c5.mjs": {
-    "file": "ChartLinks-454d63c5.mjs",
+  "_ChartLinks-d296b34c.mjs": {
+    "file": "ChartLinks-d296b34c.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_DecNumber-ba7657d9.mjs": {
-    "file": "DecNumber-ba7657d9.mjs",
+  "_DecNumber-5ead13d2.mjs": {
+    "file": "DecNumber-5ead13d2.mjs",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/fest.vue": {
-    "file": "fest-e82bd3c3.mjs",
+    "file": "fest-94473092.mjs",
     "src": "pages/fest.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -73,39 +73,39 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-5afda382.mjs",
+    "file": "index-e1278db6.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-454d63c5.mjs",
+      "_ChartLinks-d296b34c.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-ba7657d9.mjs"
+      "_DecNumber-5ead13d2.mjs"
     ],
     "dynamicImports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/president-2023.vue": {
-    "file": "president-2023-85972b68.mjs",
+    "file": "president-2023-fc57cfeb.mjs",
     "src": "pages/president-2023.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-454d63c5.mjs",
+      "_ChartLinks-d296b34c.mjs",
       "node_modules/nuxt/dist/app/entry.mjs",
-      "_DecNumber-ba7657d9.mjs"
+      "_DecNumber-5ead13d2.mjs"
     ]
   },
   "pages/president-2028.vue": {
-    "file": "president-2028-c78184ff.mjs",
+    "file": "president-2028-7219e3e0.mjs",
     "src": "pages/president-2028.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChartLinks-454d63c5.mjs",
+      "_ChartLinks-d296b34c.mjs",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/test.vue": {
-    "file": "test-387968b0.mjs",
+    "file": "test-f237bbc7.mjs",
     "src": "pages/test.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -113,7 +113,7 @@
     ]
   },
   "layouts/custom.vue": {
-    "file": "custom-6bccca11.mjs",
+    "file": "custom-4e64d5cf.mjs",
     "src": "layouts/custom.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -123,8 +123,8 @@
       "custom.067cef2e.css"
     ]
   },
-  "_plotly-23a4087b.mjs": {
-    "file": "plotly-23a4087b.mjs",
+  "_plotly-b91d085d.mjs": {
+    "file": "plotly-b91d085d.mjs",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
