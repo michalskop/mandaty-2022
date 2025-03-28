@@ -670,7 +670,8 @@ for special in [True, False]:
   concats = [fulldata, valss.loc[:, fulldata.columns]]
 
   fchart = pd.concat(concats)
-  fchart.to_csv(abs_path + flourish_path + "psp_polls_fchart.csv", index=False)
+  if special:
+    fchart.to_csv(abs_path + flourish_path + "psp_polls_fchart.csv", index=False)
 
   # TABLES
   # parties
