@@ -522,7 +522,7 @@ for special in [True, False]:
   fig.layout.yaxis.tickformat = ',.0%'
   # fig.update_xaxes(range=[df['date'][0], election_date])
   fig.update_layout(
-    title="Sněmovna 2021-2025",
+    title="Sněmovna volby 2025",
     titlefont=dict(
       family='Ubuntu, verdana, arial, sans-serif',
       size=16,

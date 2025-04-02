@@ -4,7 +4,7 @@
       <div class="col-md-4">
         <NuxtLink to="/">
           <img src="~/assets/image/psp_thumbnail.svg" class="image" />
-          <span class="text-image">Sněmovna 2021-2025</span>
+          <span class="text-image">Sněmovna volby 2025</span>
         </NuxtLink>
       </div>
       <div class="col-md-4">

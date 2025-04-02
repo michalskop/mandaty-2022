@@ -3,7 +3,7 @@
     
     <ChartLinks />
 
-    <h1 class="pt-4">Sněmovna 2021-2025</h1>
+    <h1 class="pt-4">Sněmovna volby 2025</h1>
 
     <hr />
 
