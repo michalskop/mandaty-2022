@@ -43,7 +43,7 @@ runs = 1000  # number of runs
 
 coef = 2 # coefficient * sd (other error)
 
-election_date = '2025-10-01'
+election_date = '2025-10-03'
 majority = 101
 
 # special coalitions:
@@ -659,7 +659,7 @@ for special in [True, False]:
   source1.loc[:, ['pollster:id', 'middle_date']]
   vals = allvalues.copy()
   vals.index = source1.loc[:, ['pollster:id', 'middle_date']]
-  valss = vals.unstack().reset_index()
+  valss = vals[~vals.index.duplicated(keep='last')].unstack().reset_index()
   valss.columns = ['Strana', 'level_1', 'Hodnota']
   valss = valss.join(pd.DataFrame(valss['level_1'].values.tolist()))
   valss.columns = ['Strana', 'level_1', 'Hodnota', 'Agentura', 'Datum']
