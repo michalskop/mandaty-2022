@@ -49,6 +49,7 @@ majority = 101
 # special coalitions:
 special_coalitions = {
   'SPOLU': ['ODS', 'KDU-ČSL', 'TOP 09'],
+  'Piráti+Z': ['Piráti', 'Zelení'],
   # 'Přísaha+Motor': ['Přísaha', 'Motoristé'],
   # 'Stačilo': ['KSČM', 'SOCDEM'],  # Variant Stačilo!
 }
