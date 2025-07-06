@@ -364,7 +364,13 @@ for special in [True, False]:
 
   #
   # prepare flourish + plotly charts
-  mu.sort_values([mu.index.max()], ascending=False, axis=1, inplace=True)
+  # Handle duplicate indices by sorting by values at the maximum date
+  max_date = mu.index.drop_duplicates(keep='last').max()
+  # Get values at max_date and sort columns by those values
+  max_values = mu.loc[max_date]
+  if isinstance(max_values, pd.DataFrame):
+      max_values = max_values.iloc[-1]
+  mu = mu[max_values.sort_values(ascending=False).index]
   mu.sort_index(inplace=True)
   # if last value is NaN, set it to the last non-NaN value
   for col in mu.columns:
