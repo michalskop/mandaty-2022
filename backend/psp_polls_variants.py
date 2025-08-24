@@ -10,7 +10,8 @@ import pandas as pd
 # Motoristé = 0
 # KSČM = 0
 estimates_var = estimates.copy()
-estimates_var = estimates_var[estimates_var['Motoristé'] == 0]
+estimates_var = estimates_var[estimates_var['KSČM'] == 0]
+# estimates_var = estimates_var[(estimates_var['Motoristé'] == 0) &  (estimates_var['KSČM'] == 0)]
 estimates_runs = len(estimates_var)
 
 # test:
