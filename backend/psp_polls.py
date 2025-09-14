@@ -1,6 +1,5 @@
 """Testing psp again, always better."""
 
-from calendar import month
 import datetime
 import json
 import math
